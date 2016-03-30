@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>محمد رضا محمودی</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <description>طراح و توسعه دهنده رابط کاربری
 </description>
     <link>http://rezaaa.github.io/</link>
     <atom:link href="http://rezaaa.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Mar 2016 20:41:15 +0430</pubDate>
-    <lastBuildDate>Wed, 30 Mar 2016 20:41:15 +0430</lastBuildDate>
+    <pubDate>Wed, 30 Mar 2016 23:18:12 +0430</pubDate>
+    <lastBuildDate>Wed, 30 Mar 2016 23:18:12 +0430</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>

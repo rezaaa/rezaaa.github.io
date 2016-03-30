@@ -166,11 +166,17 @@ input, select, textarea {
 .icon-spotify:before {
   content: "\e903"; }
 
+.icon-email:before {
+  content: "\e0be"; }
+
 .icon-back:before {
   content: "\e5c4"; }
 
 .icon-forward:before {
   content: "\e5c8"; }
+
+.icon-user:before {
+  content: "\e7fd"; }
 
 .icon-heart:before {
   content: "\e87d"; }
@@ -183,6 +189,73 @@ input, select, textarea {
 
 .icon-google-plus:before {
   content: "\f0d5"; }
+
+/* Header */
+.header {
+  width: 100%;
+  height: 107px;
+  background: #fff;
+  border-bottom: 1px solid #F5F5F5; }
+
+.header .inner {
+  width: 1280px;
+  margin: 0 auto;
+  line-height: 107px;
+  display: table; }
+
+.header .inner .logo {
+  display: table-cell;
+  vertical-align: middle; }
+
+.header .inner .logo a {
+  background: url(../images/logo.png);
+  display: block;
+  width: 178px;
+  height: 37px;
+  background-size: 178px 37px;
+  -moz-background-size: 178px 37px;
+  -webkit-background-size: 178px 37px; }
+
+.header .inner .menu {
+  padding-right: 80px;
+  display: table-cell;
+  vertical-align: middle; }
+
+.header .inner .menu li {
+  float: right;
+  margin-left: 80px; }
+
+.header .inner .menu li a {
+  font-weight: bold;
+  font-size: 13px; }
+
+.header .inner .menu li a span {
+  margin-left: 6px;
+  font-size: 13px;
+  position: relative;
+  top: 2px; }
+
+.header .inner .menu li a span.icon-github, .header .inner .menu li a span.icon-spotify {
+  font-size: 14px; }
+
+.header .inner .menu li a span.icon-linkedin {
+  font-size: 12px;
+  top: 1px; }
+
+.header .inner .menu .contact {
+  float: left;
+  margin: 0; }
+
+.header .inner .menu .contact a {
+  font-weight: bold;
+  font-size: 13px;
+  color: #606061; }
+
+.header .inner .menu .contact a:hover {
+  color: #474747; }
+
+.header .inner .menu .contact a span.icon-email {
+  font-size: 14px; }
 
 /* Fonts */
 @font-face {
@@ -307,6 +380,9 @@ h1, h2, h3, h4, h5, h6 {
 .linkedin a {
   color: #0E76A8; }
 
+.feed a {
+  color: #f26522; }
+
 /**
  * Code formatting
  */
@@ -417,66 +493,6 @@ blockquote {
 .hljs-strong {
   font-weight: bold; }
 
-/* Header */
-.header {
-  width: 100%;
-  height: 107px;
-  background: #fff;
-  border-bottom: 1px solid #F5F5F5; }
-
-.header .inner {
-  width: 1280px;
-  margin: 0 auto;
-  line-height: 107px; }
-
-.header .inner .logo {
-  float: right;
-  margin-top: 36px; }
-
-.header .inner .logo a {
-  background: url(../images/logo.png);
-  display: block;
-  width: 201px;
-  height: 37px;
-  background-size: 201px 37px;
-  -moz-background-size: 201px 37px;
-  -webkit-background-size: 201px 37px; }
-
-.header .inner .newsletter {
-  float: left; }
-
-.header .inner .newsletter .btn {
-  border-radius: 30px;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -ms-border-radius: 30px;
-  padding: 0 20px; }
-
-.header .inner .menu {
-  margin-right: 80px;
-  float: right; }
-
-.header .inner .menu li {
-  float: right;
-  margin-left: 80px; }
-
-.header .inner .menu li a {
-  font-weight: bold;
-  font-size: 14px; }
-
-.header .inner .menu li a span {
-  margin-left: 6px;
-  font-size: 13px;
-  position: relative;
-  top: 2px; }
-
-.header .inner .menu li a span.icon-github, .header .inner .menu li a span.icon-spotify {
-  font-size: 14px; }
-
-.header .inner .menu li a span.icon-linkedin {
-  font-size: 12px;
-  top: 1px; }
-
 /* Buttons */
 .btn {
   display: inline-block;
@@ -495,66 +511,6 @@ blockquote {
 .btn:hover {
   background: #FF6969;
   color: #fff; }
-
-/* Header */
-.header {
-  width: 100%;
-  height: 107px;
-  background: #fff;
-  border-bottom: 1px solid #F5F5F5; }
-
-.header .inner {
-  width: 1280px;
-  margin: 0 auto;
-  line-height: 107px; }
-
-.header .inner .logo {
-  float: right;
-  margin-top: 36px; }
-
-.header .inner .logo a {
-  background: url(../images/logo.png);
-  display: block;
-  width: 201px;
-  height: 37px;
-  background-size: 201px 37px;
-  -moz-background-size: 201px 37px;
-  -webkit-background-size: 201px 37px; }
-
-.header .inner .newsletter {
-  float: left; }
-
-.header .inner .newsletter .btn {
-  border-radius: 30px;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -ms-border-radius: 30px;
-  padding: 0 20px; }
-
-.header .inner .menu {
-  margin-right: 80px;
-  float: right; }
-
-.header .inner .menu li {
-  float: right;
-  margin-left: 80px; }
-
-.header .inner .menu li a {
-  font-weight: bold;
-  font-size: 13px; }
-
-.header .inner .menu li a span {
-  margin-left: 6px;
-  font-size: 13px;
-  position: relative;
-  top: 2px; }
-
-.header .inner .menu li a span.icon-github, .header .inner .menu li a span.icon-spotify {
-  font-size: 14px; }
-
-.header .inner .menu li a span.icon-linkedin {
-  font-size: 12px;
-  top: 1px; }
 
 /* Content */
 .content-wrapper {
@@ -821,3 +777,92 @@ blockquote {
 
 .footer .inner .footer-left-side {
   float: left; }
+
+@media only screen and (min-width: 980px) and (max-width: 1300px) {
+  .header .inner {
+    width: 95%; }
+
+  .header .inner .menu li {
+    float: right;
+    margin-left: 60px; }
+
+  .header .inner .menu li.feed {
+    margin-left: 0; } }
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .header .inner {
+    width: 95%; }
+
+  .header .inner .menu {
+    padding-right: 10px; }
+
+  .header .inner .menu li {
+    float: right;
+    margin-left: 40px; }
+
+  .header .inner .menu li.feed {
+    margin-left: 0; }
+
+  .header .inner .newsletter .btn {
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -ms-border-radius: 30px;
+    padding: 0 15px;
+    font-size: 13px; } }
+@media only screen and (max-width: 767px) {
+  .header {
+    height: auto; }
+
+  .header .inner {
+    width: 95%;
+    line-height: 100%; }
+
+  .header .inner .logo {
+    display: block;
+    margin-top: 36px;
+    text-align: center; }
+
+  .header .inner .logo a {
+    margin: 0 auto; }
+
+  .header .inner .menu {
+    display: block;
+    margin: 27px 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center; }
+
+  .header .inner .menu ul li, .header .inner .menu ul li.contact {
+    float: none;
+    display: inline-block;
+    margin: 0 15px; }
+
+  .content-wrapper {
+    margin-top: 30px;
+    width: 95%; }
+
+  .content-wrapper .post .title h2, .content-wrapper .post.single .title h1 {
+    line-height: 150%;
+    margin-top: 9px; }
+
+  .content-wrapper .post {
+    margin-bottom: 30px; }
+
+  .content-wrapper .post:after {
+    margin-top: 30px; }
+
+  .navigations {
+    width: 95%; }
+
+  .footer .inner {
+    width: 95%; } }
+@media only screen and (max-width: 570px) {
+  .header .inner .menu {
+    float: none;
+    margin-bottom: 10px; }
+
+  .header .inner .menu ul li {
+    float: right;
+    display: block;
+    width: 33.33%;
+    margin: 10px 0 !important; } }

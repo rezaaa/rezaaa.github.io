@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>محمد رضا محمودی</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://rezaaa.github.io//</link>
+    <atom:link href="http://rezaaa.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 30 Mar 2016 20:32:25 +0430</pubDate>
+    <lastBuildDate>Wed, 30 Mar 2016 20:32:25 +0430</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>ایجاد فوتر چسبان با استفاده از Display:Table</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/sticky-footer-table/1.jpg&quot; alt=&quot;ایجاد فوتر چسبان با استفاده از Display:Table&quot; title=&quot;ایجاد فوتر چسبان با استفاده از Display:Table&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;فوتر چسبان یا Dynamic Sticky Footer به فوتری گفته میشه که اگر محتوای موجود، کمتر از مقداری باشه که باعث زیاد شدن ارتفاع صفحه بشه، فوتر باید به صورت ثابت به پایین صفحه بچسبه و در صورتی که محتوا زیاد و ادامه دار باشه، فوتر باید خیلی عادی در ادامه محتوا و انتهای صفحه قرار بگیره. تصویر زیر به درک این موضوع بیشتر کمک میکنه.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;بیشتر از یک سال پیش مطلبی در مورد &lt;a href=&quot;/how-to-make-a-sticky-footer.html&quot;&gt;نحوه نوشتن فوتر چسبان یا Sticky Footer&lt;/a&gt; منتشر کرده بودم، اما این بار با یه روش جدید میتونید همین کار رو فقط با CSS انجام بدید.&lt;/p&gt;
+
+&lt;p&gt;چون این مطلب به Table مرتبط هست بهتره بدونید که ۲ نوع Table وجود داره که یک نوع با استفاده از تگ &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;table&amp;gt;&lt;/code&gt; ساخته میشه، و نوع دیگه خواص Table در CSS هست که میتونیم این خواص رو به هرچیزی بدیم تا رفتار شبیه به جدول داشته باشه.&lt;/p&gt;
+
+&lt;h4 id=&quot;css---table&quot;&gt;خواص CSS مربوط به Table&lt;/h4&gt;
+
+&lt;p&gt;خواص CSSای که مربوط به &lt;code class=&quot;highlighter-rouge&quot;&gt;Table&lt;/code&gt; هست رو براتون می‌نویسم تا باهاش آشنا بشید.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table-row&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;thead&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table-header-group&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;tbody&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table-row-group&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;tfoot&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table-footer-group&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table-column&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;colgroup&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table-column-group&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;td&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;th&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table-cell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;caption&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table-caption&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;در طراحی های مدرن همه از Table فراری هستند و دلیلش هم مشخصه که اگر دوست داشتید میتونید از &lt;a href=&quot;http://phrogz.net/css/WhyTablesAreBadForLayout.html&quot;&gt;اینجا&lt;/a&gt; دلایلش رو بخونید. اما این بار میخوایم از خواص سی اس اس Tableها استفاده جالبی بکنیم و نشون بدیم که در خیلی از موارد این خواص میتونن خیلی مفید و کاربردی باشن.&lt;/p&gt;
+
+&lt;h4 id=&quot;displaytable&quot;&gt;ترفند ایجاد فوتر چسبان با استفاده از Display:table&lt;/h4&gt;
+
+&lt;p&gt;ساختار HTML مورد نیاز برای انجام این کار به شکل زیر هست:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    Content
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    Footer
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;یه بخش برای محتوا داریم و یه بخش هم برای فوتر.&lt;/p&gt;
+
+&lt;p&gt;حالا کد CSSای که نیاز داریم باید به شکل زیر نوشته بشه (سایزها و رنگ‌ها رو میتونید به دلخواه عوض کنید):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;table&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#eee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;table-row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.footer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;/*height:30px;*/&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#00f0ad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;table-row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;در کدهای CSS میتونید ببینید که به body خاصیت &lt;code class=&quot;highlighter-rouge&quot;&gt;display:table&lt;/code&gt; و همچنین به ۲ قسمتی که توی صفحه وجود داره &lt;code class=&quot;highlighter-rouge&quot;&gt;display:table-row&lt;/code&gt; داده شده. در صورتی که با جدول های HTML کار کرده باشید باید بدونید که اگر یه جدول با هر ارتفاعی داشته باشید، سطرهای داخل اون خود به خود ارتفاعشون رو جوری تنظیم میکنن که کل جدول رو پر کنن.&lt;/p&gt;
+
+&lt;p&gt;در این روش نوشتن فوتر چسبان هم ما از همین قابلیت جدول استفاده کردیم. اگر دوست ندارید که به body خاصیت &lt;code class=&quot;highlighter-rouge&quot;&gt;display:table&lt;/code&gt; بدید، میتونید کل صفحه رو بعد از body در یک تگ مناسب مثل div با کلاس، مثلا wrapper بندازید و بعد به اون &lt;code class=&quot;highlighter-rouge&quot;&gt;display:table&lt;/code&gt; اضافه کنید.&lt;/p&gt;
+
+&lt;p&gt;ممکنه بگید که با راه حل های Flexbox همه این کارها رو میشه خیلی بهتر انجام داد و چرا باید از خواص Table استفاده کنیم؟!&lt;/p&gt;
+
+&lt;p&gt;در جواب این سوال باید بگم با وجود اینکه من تمایلی به استفاده و پشتیبانی از مرورگرهای قدیمی ندارم اما به دلیل استفاده اکثر کاربران (مخصوصا در ایران) از مرورگرهای به روز نشده و قدیمی و همچنین وضعیت کاری خودم که روی پروژه های بانکی کار میکنم، مجبور به استفاده از روش هایی هستم که روی بیشتر مرورگرها جواب بده و به نظر خودم فعلا همین روش ها جوابگو هستند تا وضعیت به مرور بهتر بشه. [&lt;a href=&quot;http://www.netmarketshare.com/browser-market-share.aspx?qprid=2&amp;amp;qpcustomd=0&quot;&gt;+&lt;/a&gt;]&lt;/p&gt;
+
+&lt;p&gt;در پایان نمونه کامل شده این فوتر رو از &lt;a href=&quot;http://jsfiddle.net/rezaaa/L6qnr632/&quot;&gt;اینجا&lt;/a&gt;  ببینید.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 28 Oct 2014 00:00:00 +0330</pubDate>
+        <link>http://rezaaa.github.io//how-to-make-a-sticky-footer-with-display-table.html</link>
+        <guid isPermaLink="true">http://rezaaa.github.io//how-to-make-a-sticky-footer-with-display-table.html</guid>
+        
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>بازی‌نمایی و تاثیر آن در موفقیت یک محصول</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/gamification/1.jpg&quot; alt=&quot;بازی‌نمایی و تاثیر آن در موفقیت یک محصول&quot; title=&quot;بازی‌نمایی و تاثیر آن در موفقیت یک محصول&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;به تازگی با واژه Gamification آشنا شده‌ام و به دلیل جذابیتی که برایم داشت سعی کردم تا اطلاعات بیشتری در موردش کسب کنم. &lt;a href=&quot;http://1pezeshk.com/archives/2014/02/the-psychology-of-gamification-can-apps-keep-you-motivated.html&quot;&gt;علیرضا مجیدی&lt;/a&gt; در وبلاگش واژه فارسی بازی‌وار‌سازی را برای Gamification انتخاب کرد اما به نظر من شاید &lt;strong&gt;بازی‌نمایی&lt;/strong&gt; معادل بهتری برای آن باشد. در این مقاله به صورت کوتاه در مورد بازی‌نمایی توضیح خواهم داد و پیشنهاد می‌کنم برای اطلاعات بیشتر در این زمینه تحقیق کنید.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;بازی‌نمایی استفاده از عناصر و تکنیک‌های موجود در بازی در دنیای واقعی و بستری غیر از بازی است.&lt;/p&gt;
+
+&lt;p&gt;در محیط بازی ما با امتیازها، نشان‌های تشویقی، رتبه‌ها, ماموریت‌ها و… سر و کار داریم. حالا فرض کنید که همین عناصر در زندگی واقعی پیاده سازی شوند. وقتی کتابی را شروع می‌کنید و آن را به پایان می‌رسانید چند امتیاز به شما داده شود. وقتی مسواک می‌زنید و یا خانه را تمیز می‌کنید امتیاز دریافت کنید. وقتی به جای ماشین شخصی با اتوبوس به محل کار می‌روید امتیاز و نشان دریافت کنید و به همین ترتیب برای همه کارهای مفید خود، امتیاز و نشان‌های تشویقی بگیرید. شاید خیلی هیجان انگیز به نظر برسد. در واقع شما سعی می‌کنید برای گرفتن امتیاز و رتبه بالاتر، کارهای مفید بیشتری انجام دهید و حتی کارهای اجباری برایتان جذاب می‌شوند چون در ازای انجامشان پاداش می‌گیرید.&lt;/p&gt;
+
+&lt;p&gt;تا اینجا با معنی و مفهوم کلی بازی‌نمایی آشنا شدید. اکنون بررسی می‌کنیم که بازی‌نمایی می‌تواند چه تاثیراتی در طراحی وب و اپلیکیشن‌های موبایل داشته باشد.&lt;/p&gt;
+
+&lt;p&gt;بازی‌های خوب همیشه اعتیادآور بوده‌اند، به طوری که برای کنار گذاشتن بازی ساده‌ای مثل FlappyBird که روی گوشی خود نصب کرده‌اید مجبورید تا حد زیادی تلاش کنید! چه چیزی باعث می‌شود این بازی‌ها تا این حد اعتیادآور باشند؟ یکی از دلایل آن می‌تواند کسب امتیاز بیشتر و به دست آوردن رتبه بالاتر در میان بازیکنان دیگر و دوستانتان باشد! آنقدر ادامه می‌دهید تا به امتیازی برسید که بتوانید تنها به مدت چند ساعت یا چند روز بیخیال بازی کردن بشوید!&lt;/p&gt;
+
+&lt;p&gt;در طراحی وب و اپلیکیشن هم می‌توان با استفاده از بازی‌نمایی، تجربه کاربری (UX) بهتری برای کاربر ایجاد کرد تا انگیزه لازم برای کار کردن و ادامه استفاده از محصولتان را داشته باشد. &lt;strong&gt;بنابراین بازی‌نمایی می‌تواند به عنوان یک ویژگی جزئی از تجربه کاربری (UX) باشد.&lt;/strong&gt; هر محصول تجربه‌ای را به کاربر می‌دهد که می‌تواند خوب یا بد باشد، ممکن است محصولی که نیاز به بازی‌نمایی ندارد و یا بازی‌نمایی در آن اجرا نشده است تجربه بهتری نسبت به محصولی که بازی‌نمایی در آن پیاده‌سازی شده است به کاربر ارائه دهد. پس نوع محصول و نحوه اجرای آن هم در موفقیتش تاثیر دارد. البته بدیهی است که خواست کاربر به استفاده از یک محصول، بسیار حائز اهمیت است. یعنی اگر محصولی همراه با بهترین تجربه کاربری ارائه دهید، باز هم ممکن است توانایی جذب درصد بالایی از خاطبانتان را نداشته باشید.&lt;/p&gt;
+
+&lt;p&gt;کمپانی‌های زیادی از بازی‌نمایی در محصولاتشان استفاده می‌کنند که از معروف‌ترینشان میتوان به نام‌های زیر اشاره کرد:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Microsoft&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Nike&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CodeAcademy&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Samsung&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Foursquare&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stack Overflow&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Dell&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;eBay&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Siemens&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Yelp&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;یکی از نمونه‌های موفق، اپلیکیشن Nike+ است که با استفاده از عناصر مختلفی مثل دادن مدال و امتیاز، کاربر را تشویق به بیشتر دویدن می‌کند تا در میان رقبا و دوستانش رتبه‌ی بالاتری کسب کند. شما پشت کامپیوتر قرار نمی‌گیرید تا یک بازی دو انجام دهید، بلکه به صورت واقعی می‌دوید و با حس رقابت سعی می‌کنید تا دونده‌ی بهتر و فعال‌تری شوید. بنابراین کاربر به این شکل تشویق می‌شود تا بیشتر از محصولات و اپلیکیشن Nike استفاده کند.&lt;/p&gt;
+
+&lt;p&gt;از نمونه‌های موفق دیگر میتوان به اپلیکیشن Foursquare اشاره کرد که با دادن نشان‌های مختلف کاربر را تشویق می‌کند تا کاری مثل Check in کردن را انجام دهد و همچنین سعی کند با رفتن و Check in کردن در مکان‌های مختلف در میان دوستانش، به رتبه و لیست مکان‌های بلند بالاتری دست پیدا کند!&lt;/p&gt;
+
+&lt;p&gt;از وب‌سایت‌های موفق می‌توان به Stackoverflow اشاره کرد که کاربران در آن تلاش می‌کنند تا با پاسخ دادن به سوالات و فعالیت بیشتر، اعداد و ارقام موجود در پروفایلشان را بالاتر ببرند و تعداد بیشتری از نشان‌های تشویقی را کسب کنند.&lt;/p&gt;
+
+&lt;p&gt;همچنین در توییتر هم میان کاربران برای بالا بردن اعداد بالای پروفایلشان رقابت وجود دارد. کاربران سعی می‌کنند تا با بیشتر توئیت کردن و به دست آوردن دنبال‌کنندگان بیشتر با بقیه رقابت کنند و اعتبار بیشتری را به دست بیاورند.&lt;/p&gt;
+
+&lt;p&gt;این حس رقابت و جنب و جوش، حاصل بازی‌نمایی و تجربه کاربری خوبی است که در محصولات بالا پیاده سازی شده است. برای ایجاد محصولی موفق و پر استفاده ، بازی‌نمایی می‌تواند یکی از عوامل مهم و تاثیرگذار باشد. امیدوارم در مورد آن بیشتر مطالعه کنید.&lt;/p&gt;
+
+&lt;p&gt;در پایان از سیامک آذین‌فر عزیز که به من در ترجمه منابع و ویرایش این مقاله کمک کرد تشکر میکنم.&lt;/p&gt;
+
+&lt;p&gt;موفق باشید.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 11 Mar 2014 00:00:00 +0330</pubDate>
+        <link>http://rezaaa.github.io//gamification.html</link>
+        <guid isPermaLink="true">http://rezaaa.github.io//gamification.html</guid>
+        
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>چرا یک طراح وب باید وبلاگ‌نویسی کند؟</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/why-blogging-is-good-for-web-designers/1.jpg&quot; alt=&quot;چرا یک طراح وب باید وبلاگ‌نویسی کند؟&quot; title=&quot;چرا یک طراح وب باید وبلاگ‌نویسی کند؟&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;من تا کمتر از یک سال پیش تمایلی به وبلاگ‌نویسی نداشتم و بیشتر وقتم را صرف کار و سرگرمی‌های مختلف میکردم. قبل از اینکه در شبکه‌های اجتماعی و وبلاگ شخصی خودم فعالیت کنم وضعیت شغلی خیلی عادی‌ داشتم و میزان شناخته شدنم در میان همکارانم و افراد فعال در این زمینه خیلی کم بود.&lt;/p&gt;
+
+&lt;p&gt;تا قبل از اینکه وبلاگ‌نویسی را شروع کنم با یک سایت شخصی خودم را معرفی میکردم که شامل فرم ارتباط با من و لیست نمونه‌کارها بود. اما بعد از مدتی وبلاگ ساختم و شروع کردم به وبلاگ‌نویسی. هم در مورد پروژه‌هایی که انجام میدادم مینوشتم و هم سعی میکردم چیزهای جدیدی که یاد میگیرم را با خوانندگان وبلاگم به اشتراک بگذارم. بعد از وبلاگنویسی وضعیت شغلی من پیشرفت زیادی کرد و در حوزه کاری خودم هم بیشتر شناخته شدم…&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;وبلاگ‌نویسی کمک میکند تا شناخته شوید&lt;/h4&gt;
+
+&lt;p&gt;اگر یک طراح وب فریلنسر یا آزادکار هستید وبلاگ‌نویسی و فعالیت در شبکه‌های اجتماعی کمک میکند تا در حوزه کاری خود شناخته شده و با افراد بیشتری آشنا شوید. وبلاگ‌نویسی باعث میشود تا دانش و مهارت بیشتری کسب کنید و فرصت این را داشته باشید تا خودتان را به خوانندگان و مشتریانتان نشان دهید. شما با وبلاگ‌نویسی نه تنها زندگی خودتان را تغییر می‌دهید بلکه زندگی خوانندگانتان را هم عوض میکنید، چون به صورت رایگان دانش و تجربیاتتان را با آنها به اشتراک می‌گذارید و این کار هم موجب محبوبیت شما و هم پیشرفت خوانندگانتان میشود. به اشتراک گذاشتن چیزهایی که میدانید با بقیه، حس خوبی به شما میدهد :)&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;وبلاگ‌نویسی باعث می‌شود تا به یک نویسنده خوب تبدیل شوید&lt;/h4&gt;
+
+&lt;p&gt;مثل همیشه، تمرین کردن بهترین راه برای پیشرفت است. اگر شما روزانه مقداری از وقت خودتان را صرف نوشتن کنید دیر یا زود توانایی نویسندگی‌تان بهتر میشود. این توانایی فقط با نوشتن بهتر نمی‌شود بلکه با خواندن مطالب دیگران نیز می‌توانید در این زمینه پیشرفت کنید. بسیاری از نویسندگان نوشتن را از وبلاگ‌نویسی شروع کرده‌اند.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/why-blogging-is-good-for-web-designers/2.jpg&quot; alt=&quot;چرا یک طراح وب باید وبلاگ‌نویسی کند؟&quot; title=&quot;چرا یک طراح وب باید وبلاگ‌نویسی کند؟&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;وبلاگ‌نویسی شما را به دنیا متصل می‌کند&lt;/h4&gt;
+
+&lt;p&gt;شبکه‌های اجتماعی یکی از راه‌های دوست پیدا کردن و ارتباط با دیگران است. اما با وبلاگ‌نویسی هم می‌توانید دوست‌های عالی پیدا کنید و با افراد زیادی کانکشن بزنید تا از تجربیات یکدیگر استفاده کنید. من با وبلاگ‌نویسی و فعالیتم در شبکه‌های اجتماعی دوستان بسیار خوبی پیدا کرده‌ام که سالهاست خارج از دنیای مجازی باهم در ارتباط هستیم و تبادل اطلاعات و حتی کاری داریم.&lt;/p&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;وبلاگ‌نویسی یک نوع درمان محسوب می‌شود&lt;/h4&gt;
+
+&lt;p&gt;درست مثل سال‌ها قبل که دفتر خاطرات داشتید و خاطرات خود را در آن می‌نوشتید، با وبلاگ‌نویسی هم میتوانید تمام خاطرات، احساسات و تجربیات خود را  بنویسید و تنها با فشردن یک دکمه آن را روی اینترنت منتشر کنید، تا افراد زیادی آنها را بخوانند. این کار باعث می‌شود تا از هرچیزی که به آن فکر می‌کنید آزاد شوید، احساس تنها بودن نکنید و خوشحال باشید.&lt;/p&gt;
+
+&lt;p&gt;امیدوارم با دلایلی که نوشتم متوجه شده باشید که چرا بهتر است تا یک طراح وب وبلاگ‌نویسی کند :) موفق باشید.&lt;/p&gt;
+
+&lt;p&gt;منابع : [&lt;a href=&quot;http://www.becomingminimalist.com/15-reasons-i-think-you-should-blog/&quot;&gt;+&lt;/a&gt;] [&lt;a href=&quot;http://vandelaydesign.com/blog/blogging/freelance-blogging/&quot;&gt;+&lt;/a&gt;] [&lt;a href=&quot;http://www.caracaleo.com/4-reasons-blogging-is-good-for-you/&quot;&gt;+&lt;/a&gt;]&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 27 Feb 2014 00:00:00 +0330</pubDate>
+        <link>http://rezaaa.github.io//why-blogging-is-good-for-web-designers.html</link>
+        <guid isPermaLink="true">http://rezaaa.github.io//why-blogging-is-good-for-web-designers.html</guid>
+        
+        
+        <category>work</category>
+        
+      </item>
+    
+      <item>
+        <title>تجربه‌ی استفاده از مک بوک پرو رتینا</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/macbook-pro-retina/1.jpg&quot; alt=&quot;تجربه‌ی استفاده از مک بوک پرو رتینا&quot; title=&quot;تجربه‌ی استفاده از مک بوک پرو رتینا&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;یک هفته ای میشه که مک بوک پرو رتینا خریدم و دارم ازش استفاده میکنم. دوست داشتم تجربه‌ی استفاده ازش رو باهاتون به اشتراک بزارم و برای همین تصمیم گرفتم این مطلب رو تو وبلاگم بنویسم.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;مدل مک بوکی که خریدم &lt;code class=&quot;highlighter-rouge&quot;&gt;ME293&lt;/code&gt; هست که تو سال ۲۰۱۳ معرفی شده و مشخصات فنیش رو پایین براتون نوشتم.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;مشخصات فیزیکی : ابعاد : 18 × 247 × 359 میلی‌متر - وزن : 2.02 کیلوگرم&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;پردازنده مرکزی : &lt;code class=&quot;highlighter-rouge&quot;&gt;Intel Core i7 Haswell 2.00GHz up to 3.20 GHz&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;حافظه RAM : ظرفیت : 8 گیگابایت - نوع : &lt;code class=&quot;highlighter-rouge&quot;&gt;DDR3&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;حافظه داخلی :ظرفیت : 256 گیگابایت - نوع : SSD - مشخصات : Flash Storage&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;پردازشگر گرافیکی : &lt;code class=&quot;highlighter-rouge&quot;&gt;Intel Iris Graphics&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;صفحه نمایش : 15.4 اینچ IPS LCD&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;امکانات : فاقد درایو نوری - فاقد مودم - بلوتوث داخلی Card Reader Webcam WiFi HDMI&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;سایر مشخصات : باتری 6 سلولی - Apple Mac OS&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;همیشه فکر میکردم که کار کردن با مک برای منی که همیشه با ویندوز کار کرده بودم ممکنه سخت باشه و زمان زیادی ازم بگیره تا بهش عادت کنم. اما فقط چند روز زمان برد تا بیشتر جزئیات رو یاد بگیرم. از همون روز اول تجربه‌ی کار کردن باهاش خیلی لذت بخش و عالی بود.&lt;/p&gt;
+
+&lt;p&gt;یکی از نگرانی های من قبل از خرید مک بوک صفحه نمایش رتینای اون بود. با اینکه کیفیتش فوق العاده هست اما چون هنوز خیلی از سایت ها با این فناوری سازگار نیستن تصاویر معمولی رو تار نشون میده و همچنین چون کار من طراحی وب هست و زیاد با برنامه‌هایی مثل فتوشاپ سر و کار دارم میترسیدم با صفحه نمایش رتینا کار برام سخت بشه. اما با تجربه‌ای که تا الان من باهاش داشتم تار بودن تصاویر موقع وبگردی زیاد ازاردهنده نیست و حتی خیلی از مواقع اصلا حس نمیشه. تنها مشکلی که دارم با طرح‌هایی هست که قبلا زدم و وقتی اونارو با فتوشاپ باز میکنم نصف اندازه واقعی دیده میشن اما چون بهشون نیاز ندارم برام مشکل غیر قابل تحملی ایجاد نکرده. خوبی این صفحه نمایش اینه که من توی طرح‌های جدیدم میتونم خیلی بهتر و با جزئیات بیشتری کار کنم و همه پروژه‌هام با این صفحه نمایش سازگار میشن. از اونجایی که میخوام به سمت طراحی اپلیکیشن موبایل هم برم خیلی میتونه برام مناسب و مفید باشه.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/macbook-pro-retina/2.jpg&quot; alt=&quot;تجربه‌ی استفاده از مک بوک پرو رتینا&quot; title=&quot;تجربه‌ی استفاده از مک بوک پرو رتینا&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;وقتی بعد از چند روز کار کردن با این کیفیت عالی به مانیتور قبلیم نگاه کردم کاملا تفاوت رو حس کردم و تعجب کردم که قبلا چطور با این کیفیت کار میکردم!&lt;/p&gt;
+
+&lt;p&gt;از سیستم عاملش تا حالا خیلی راضی بودم و هر نرم‌افزاری که نیاز داشتم رو بدون مشکل روش نصب کردم. به خاطر کارم نیاز داشتم تا همیشه بین ادیتور کد و مرورگر حرکت کنم که اینجا واقعا کارم راحت شده و به راحتی میتونم بین نرم‌افزارهای مختلفی که باز کردم حرکت کنم و این قابلیت سرعت کارم رو زیاد کرده.  قسمت مدیریت فایلش هم خیلی خوبه فقط روزای اول یکم برام سخت بود، اما الان کاملا عادت کردم و به راحتی ازش استفاده میکنم. از کار کردن باهاش خیلی لذت میبرم و اصلا خسته کننده نیست.&lt;/p&gt;
+
+&lt;p&gt;باطریش که خیلی عالیه! ۸ ساعت شارژ نگه میداره و برای منی که بیشتر اوقات بیرون خونه هستم و معمولا هم در حال سفرم خیلی خوبه. ابعادش خیلی نازک‌تر از اون چیزیه که فکرش رو میکنید و به حدی ظریف و نازکه که باز کردنش یکم سخت شده :دی وزنشم ۲.۰۲ کیلوگرم هست که ممکنه برای بعضی‌ها حمل طولانیش سخت باشه اما به کیفیت صفحه نمایش ۱۵ اینچیش می‌ارزه.&lt;/p&gt;
+
+&lt;p&gt;من تا حالا مشکلی باهاش نداشتم و اگر مشکل کوچیکی هم بوده خیلی راحت رفع شده. اگر با کار کردن بیشتر مشکلی دیدم حتما بازم در موردش براتون مینویسم.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 25 Dec 2013 00:00:00 +0330</pubDate>
+        <link>http://rezaaa.github.io//my-experiences-with-a-macbook-pro-retina.html</link>
+        <guid isPermaLink="true">http://rezaaa.github.io//my-experiences-with-a-macbook-pro-retina.html</guid>
+        
+        
+        <category>personal</category>
+        
+      </item>
+    
+      <item>
+        <title>خاطرات من از استارتاپ ویكند اصفهان</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/startup-weekend-isfahan/1.jpg&quot; alt=&quot;خاطرات من از استارتاپ ویكند اصفهان&quot; title=&quot;خاطرات من از استارتاپ ویكند اصفهان&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;هفته گذشته سفری به اصفهان داشتم تا توی استارتاپ ویكند شركت كنم. به نظرم این استارتاپ ویكند از لحاظ مكانی یكی از بهترین ها بود و كیفیت برگزاریش هم خیلی خوب بود. من هم چون به عنوان شركت كننده نرفته بودم بهم پیشنهاد دادن تا كارهای لایو بلاگ رو انجام بدم. خلاصه اینطوری شد كه من شروع به نوشتن و به روز كردن لایو بلاگ كردم و مشكلی كه داشتیم نبود عكاس برای پوشش تصویری بود.&lt;/p&gt;
+
+&lt;p&gt;چندتا از خبرنگارهایی كه تو سالن حضور داشتند نمیتونستند عكس هاشون رو بهم بدن و روز اول با كمك سعید سیسختی كه زحمت زیادی هم كشید تونستم گزارش رو به صورت تصویری جلو ببرم. البته روز اول با عكاس گروه شاتوكات خانم ملیحه نصر در مورد این قضیه صحبت كردم و قرار شد كه ایشون تصاویرشون رو در اختیار من قرار بدن تا توی لایو بلاگ استفاده كنم، اما به خاطر وقت گیر بودن مراحل انتقال عكس ها به لپ تاپ بیشتر از اپلیكیشن Airdroid و گوشی آقای سیسختی استفاده كردیم…&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;روز دوم، همكاری من با خانم نصر بیشتر شد و ایشون كه هیچ صحنه ای رو از دست نمیدادن و تصاویر خیلی زیبا و خوبی میگرفتند لطف كردند و عكس های خودشون رو به من دادند كه البته این كار باید خیلی سریع انجام میشد تا گزارش از حالت لایو در نیاد. اینطوری شد كه ایشون عكس میگرفتند و تو یه بازه ی زمانی تصاویر رو به لپ تاپ انتقال میدادیم و بعد از كم كردن سایز، رو لایو بلاگ منتشر میشد. خوشبختانه هم تصاویر خوب بودند و هم مشكلی تو به روز كردن لایو بلاگ پیش نیومد. بازخوردها هم خوب بود و به خاطر اینكه حس میكردم كارم رو دارم درست انجام میدم خیلی خوشحال بودم.&lt;/p&gt;
+
+&lt;p&gt;روز سوم هم به همین صورت گذشت و با زحمت خانم نصر تونستیم از بیشتر صحنه ها و تیم ها عكس تهیه كنیم. اما سخت ترین قسمت، موقع اختتامیه و ارائه تیم ها بود كه هم باید خیلی سریع متن ها و اطلاعات رو تایپ میكردم و هم اینكه انتقال تصاویر به لایو بلاگ باید تو بازه ی زمانی كوتاه تری انجام میگرفت. با مشكل ضعیف بودن اینترنت تو سالن من مجبور شدم جلوی در بشینم و لپ تاپ هم روی پام بود كه به خاطر داغ شدنش كلی عرق كرده بودم :)) توی این وضعیت یادم اومد كه انتخاب واحد نكردم و با استرس هم داشتم لایو بلاگ رو ادامه میدادم و هم انتخاب واحد میكردم :)) خیلی وضعیت مزخرف و سختی بود.&lt;/p&gt;
+
+&lt;p&gt;بخش دوم پستم مربوط به برگشت من از اصفهان به تهران و بعد رشت هست. از روز دوم من دنبال بلیط برگشت بودم كه با رفتن تو سایت های مختلف دیدم بلیط برای رشت اصلا نیست و بلیط های اصفهان به تهران هم تا 6:30 روز شنبه پر هستن. شب آخر آقای آدم زاده از برگزاركنندگان استارتاپ ویكند اصفهان به من گفتند كه چون بلیط برای برگشت گیر نیاوردم با دوایت گانینگ (نماینده  جهانی استارتاپ ویكند) با تاكسی به تهران برم و ببرمش فرودگاه بعد خودم برم به سمت رشت. منم قبول كردم و بعد از مراسم اختتامیه و خداحافظی حدودای ساعت 22:30 به سمت تهران حركت كردیم.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/startup-weekend-isfahan/2.jpg&quot; alt=&quot;خاطرات من از استارتاپ ویكند اصفهان&quot; title=&quot;خاطرات من از استارتاپ ویكند اصفهان&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;اولش همه چی خوب بود و من با اینكه انگلیسیم خوب نیست با دوایت كمی حرف میزدم تا حوصله اش سر نره. رفتیم ترمینال كاوه و بعد از اونجا به سمت كاشان حركت كردیم. دوایت ساعت 5 به سمت دبی پرواز داشت و بعد از اونجا به پاریس میرفت. ما هم باید 2 ساعت قبل از پرواز به فرودگاه میرسیدیم. تقریبا 35 كیلومتر مونده بود به كاشان یهو چراغای داخل ماشین (سمند) خاموش شد. یكم كه جلوتر رفتیم ماشین كم آورد و دیگه جلو نمیرفت و در نهایت وایساد. از ماشین پیاده شدیم و راننده هم شروع كرد زنگ زدن به این و اون تا یه ماشین دیگه گیر بیاره برامون. دوایت هم كلی استرس گرفته بود و گفت نیاز به توالت داره و رفت پشت تابلوئی كه یكم اونورتر بود تا كارش رو انجام بده. بعد بر میگشت و دوباره میرفت پشت تابلو و هی این کار رو ادامه میداد! انگار خیلی نگران بود كه به پرواز نرسه. منم بهش میگفتم نگران نباش الان یه ماشین دیگه میاد و با اون میریم. توی این مدت هم من به چند نفر از بچه های استارتاپ زنگ زدم و بهشون خبر دادم.&lt;/p&gt;
+
+&lt;p&gt;كاری از دست ما بر نمیومد و حدود 45 دقیقه توی بیابون بودیم و به ستاره ها نگاه میكردیم. دوایت رو نمیدونم ولی برای من خیلی لذت بخش بود :دی نیم ساعت كه گذشت راننده گفت باطری یكم شارژ شده و اگر ماشین رو هل بدیم امكان داره كه روشن بشه. ما هم ماشین رو از جلو به سمت عقب هل دادیم و چون جاده كمی شیب داشت ماشین سرعت گرفت و روشن شد. سوار ماشین شدیم به امید اینكه به كاشان برسیم. همین كه سوار شدیم اون خانومه‌ی سمند پشت سر هم میگفت “لطفا فیلان را چك كنید” و اینجور چیزا، یهو دیدم دوایت دو دستی چسبیده به دستگیره ی بالای در و داره جیزز رو صدا میزنه :)) راننده تعجب كرد گفت این چشه چرا ترسیده بعد دوایت خودشم متوجه كارش شد و همه باهم خندیدیم.&lt;/p&gt;
+
+&lt;p&gt;ماشین راه افتاد و حدود 20 كیلومتر جلوتر رفتیم و دقیقا زیر تابلوئه 15 كیلومتر كاشان ماشین توقف كرد. دوباره پیاده شدیم و من با دوایت حرف میزدم تا نگران نباشه. راننده هم به راننده دیگه ای كه قرار بود بیاد دنبالمون زنگ میزد و پیگیری میكرد كه كجاست. دوایت هم به آقای ملایری زنگ زده بود و داشت باهاش صحبت میكرد.&lt;/p&gt;
+
+&lt;p&gt;بعد  از 10 دقیقه یه تاكسی وایساد و سوال كرد كه چی شده اما چون مسافر داشت كمكی از دستش بر نیومد و چند دقیقه بعد ماشینی كه منتظرش بودیم اومد و دوایت با خوشحالی وسایل رو برداشت و سوار ماشین جدید شدیم و راه افتادیم.&lt;/p&gt;
+
+&lt;p&gt;راننده جدید ظاهرش یكم نرمال نبود و بعد از اینكه كاشان رو رد كردیم دوایت با نگاه كردن به راننده یكم نگران شده بود. منم عقب ماشین فقط با حركاتش داشتم میخندیدم. راننده تیك داشت و هی شونه ی راستش رو بالا میداد و دماغش رو بالا میكشید، به سمت جلو خم شده بود و انگار به فرمون تكیه داده بود. دوایت هم خیلی جدی و با نگرانی نگاش میكرد و میترسید كه راننده خوابش ببره. برا همین چرخید به سمت من و گفت كه بیا باهم حرف بزنیم تا راننده خوابش نبره، منم گفتم باشه و شروع كردیم به حرف زدن در مورد همه چی. در مورد اینترنت، استارتاپ خودش، در مورد طراحی وب، مرورگرهای مختلف، اپل و اندروید، موزیك و فیلم و… هرجایی رو هم كه متوجه نمیشدم فقط تایید میكردم. خیلی هم بلند بلند داشت حرف میزد و با هر جمله ای كه میگفت یه نگاه به راننده میكرد و من هم موقع حرف زدن خندم میگرفت و میخندیدم.&lt;/p&gt;
+
+&lt;p&gt;به قم كه رسیدیم ساعت نزدیكای 3 بود و منم خوابم میومد برا همین دیگه حوصله حرف زدن نداشتم و به صندلی تكیه داده بودم. دوایت هم دیگه حرف نمیزد و هر چند دقیقه فقط یه نگاه به راننده مینداخت و وقتی كلا همه جا ساكت بود و حس میكرد كه راننده داره میره یهو بلند میگفت “اوووه یااااا” :)) منم از حركتش خندم میگرفت و بلند میخندیدم.&lt;/p&gt;
+
+&lt;p&gt;قم رو كه رد كردیم دوباره وسط بیابون بودیم و راننده داشت با 120 تا میرفت. یه لحظه راننده فرمون رو به سمت راست كج كرد و داشت میرفت تو خاكی كه یهو دوایت بلند گفت “اوه مای گاد” و پرید فرمون رو گرفت!!! راننده هم آروم وایساد كنار و گفت “چته بابا؟! میخوام برم آب بخورم” :)) من از خنده به خودم میپیچیدم و دوایت هم به راننده میگفت “ار یو اوكی؟!” بعد راننده پیاده شد رفت آب بخوره.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;تو مسیر دوایت ازم پرسید “فیلم ماموریت غیر ممكن رو دیدی؟” منم گفتم “اره چطور؟” گفت “سفر ما به تهران مثله ماموریت غیر ممكنه”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;شاید اگر استرس رسیدن به پرواز نبود سفر خوب و پر خاطره ای برای هر دوتامون میشد. خوشبختانه نزدیكای ساعت 4 به فرودگاه رسیدیم. آقای ملایری با یكی هماهنگ كرده بود كه كارای دوایت رو سریع انجام بدن. من به قسمت CIP فرودگاه بردمش و بعد هم همو بغل كردیم و رفت. منم با تاكسی رفتم ترمینال و به سمت رشت حركت كردم.&lt;/p&gt;
+
+&lt;p&gt;به من كه خیلی خوش گذشت. هم توی استارتاپ ویكند و هم مسیر برگشت با دوایت :دی یكی از بهترین مسافرت هایی بود که تا حالا رفتم.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 08 Sep 2013 00:00:00 +0430</pubDate>
+        <link>http://rezaaa.github.io//startup-weekend-isfahan.html</link>
+        <guid isPermaLink="true">http://rezaaa.github.io//startup-weekend-isfahan.html</guid>
+        
+        
+        <category>personal</category>
+        
+      </item>
+    
+      <item>
+        <title>نحوه نوشتن فوتر چسبان یا Sticky Footer</title>
+        <description>&lt;p&gt;وقتی داشتم روی یكی از پروژه هام كار میكردم نیاز به فوتری داشتم كه همیشه به پایین صفحه چسبیده باشه. یعنی وقتی محتوای صفحه كمه فوتر پایین صفحه چسبیده باشه و همینطور وقتی كه محتوا زیاده و صفحه اسكرول میخوره فوتر حالت عادی داشته باشه و در ادامه محتوا قرار بگیره.&lt;/p&gt;
+
+&lt;p&gt;با جستجو تونستم چندتا راه حل پیدا كنم كه هم با CSS و هم جی كوئری نوشتنش امكان پذیر بود. خلاصه تونستم مشكلم رو حل كنم. چند روز پیش هم یكی از دوستان همین مشكل رو داشت و ازم كمك خواست كه منم راه حل رو بهش گفتم و مشكلش حل شد. فك كردم كه آموزش نوشتنش رو توی وبلاگم بذارم تا شما هم اگر نیاز داشتید ازش استفاده كنید.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;برای نوشتن یه فوتر چسبان یا Sticky Footer باید مراحل زیر رو دنبال كنید.&lt;/p&gt;
+
+&lt;p&gt;اول باید كل محتواتون رو به جز فوتر توی یه &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; قرار بدید.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    Content
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;فرض كنید كه كل كد HTML ما به صورت زیر هست.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    Content
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    Sticky Footer
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;حالا میریم سراغ كدهای CSS.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.wrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.wrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;min-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.wrap&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.footer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#662e8c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;180%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;فقط توجه كنید كه فوترتون حتما باید ارتفاع داشته باشه و به اندازه ارتفاع فوترتون باید &lt;code class=&quot;highlighter-rouge&quot;&gt;margin-top&lt;/code&gt; رو به صورت منفی مقدار دهی كنید.&lt;/p&gt;
+
+&lt;p&gt;دقت كنید كه ارتفاع &lt;code class=&quot;highlighter-rouge&quot;&gt;.wrap:after&lt;/code&gt; هم همون مقدار ارتفاع فوتر باید باشه. پس 3 مقدار شبیه به هم داریم.&lt;/p&gt;
+
+&lt;p&gt;این روش كلیه نوشتن یه فوتر چسبان هست. دیگه به توانایی خودتون بستگی داره كه چطور از اون روی پروژه مورد نظرتون استفاده  كنید :)&lt;/p&gt;
+</description>
+        <pubDate>Fri, 23 Aug 2013 00:00:00 +0430</pubDate>
+        <link>http://rezaaa.github.io//how-to-make-a-sticky-footer.html</link>
+        <guid isPermaLink="true">http://rezaaa.github.io//how-to-make-a-sticky-footer.html</guid>
+        
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>در طراحی خود هرگز از رنگ سیاه استفاده نكنید</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/never-use-black/2.jpg&quot; alt=&quot;never-use-black&quot; title=&quot;در طراحی خود هرگز از رنگ سیاه استفاده نكنید&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;مشكل این هست كه وقتی ما چیزهای تیره رو میبینیم اون ها رو سیاه فرض میكنیم. درصورتی كه پیدا كردن چیزی كه سیاه خالص باشه در دنیای واقعی كار مشكلیه. جاده ها سیاه نیستند، صندلی دفتر شما سیاه نیست، كلمات در وب سایت ها سیاه نیستن.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;سایه ها سیاه نیستند!&lt;/h4&gt;
+
+&lt;p&gt;به نقاشی های زیر نگاه كنید:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/never-use-black/1.jpg&quot; alt=&quot;never-use-black&quot; title=&quot;در طراحی خود هرگز از رنگ سیاه استفاده نكنید&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;در نقاشی های بالا سایه ها یكی از اشباع ترین بخش ها هستن كه روی صفحه خیلی زیاد دیده میشن. اون ها روی كاغذ عالی به نظر میان و در دنیای واقعی هم عالی هستند.&lt;/p&gt;
+
+&lt;p&gt;حالا شاید با خودتون بگید كه تصاویر بالا فقط نقاشی هست و این ها واقعی نیستن. عكس زیر یكی از خیابان های سان فرانسیسكو رو نشون میده كه با اپلیكیشن Path (همراه با فیلتر) گرفته شده.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/never-use-black/2.jpg&quot; alt=&quot;never-use-black&quot; title=&quot;در طراحی خود هرگز از رنگ سیاه استفاده نكنید&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;تیره ترین بخش این تصویر چیه؟ تیره ترین بخش این تصویر &lt;code class=&quot;highlighter-rouge&quot;&gt;#000000&lt;/code&gt; نیست! بلكه كد هگزادسیمال اون &lt;code class=&quot;highlighter-rouge&quot;&gt;#130f30&lt;/code&gt; هست كه &lt;code class=&quot;highlighter-rouge&quot;&gt;19%&lt;/code&gt; روشن تر و درصد اشباع اون به &lt;code class=&quot;highlighter-rouge&quot;&gt;69%&lt;/code&gt; میرسه.&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;سیاه، قدرتمندتر از هر چیز دیگر&lt;/h4&gt;
+
+&lt;p&gt;وقتی كه رنگ سیاه رو بعد از مجموعه ای از رنگهای با دقت انتخاب شده قرار میدید، میتونید ببینید كه سیاه قدرتمندتر از بقیه هست. در این حالت سیاه غیرعادی به نظر میرسه چون حالت طبیعی نداره. همه چیزهای “سیاهی” كه روزانه دوروبر خودمون میبینیم مقداری نور دارن كه باعث میشه تا روشن تر به نظر بیان. یعنی نمیشه بهشون گفت سیاه، اون ها خاكستری تیره هستن و چون امكان این هست كه نورها دارای یك ته رنگ باشن، اجسام فقط خاكستری تیره نیستن و میشه بهشون گفت “خاكستریِ تیرهِ رنگی”!&lt;/p&gt;
+
+&lt;p&gt;تعداد زیادی از اپ هایی كه ما روزانه استفاده میكنیم دارای رنگ سیاه هستن اما نه سیاه واقعی، بلكه خاكستری تیره! مثلا سایدبار توییتر، سایدبار &lt;a href=&quot;http://www.sublimetext.com/2&quot;&gt;Sublime Text 2&lt;/a&gt; درصورتی كه پوسته &lt;a href=&quot;https://github.com/buymeasoda/soda-theme/&quot;&gt;Soda Dark&lt;/a&gt; رو روش نصب كرده باشید، پس زمینه فتوشاپ &lt;code class=&quot;highlighter-rouge&quot;&gt;CS6&lt;/code&gt; و حتی توییتر بوت استرپ &lt;code class=&quot;highlighter-rouge&quot;&gt;(Bootstrap)&lt;/code&gt;. همه اینها از رنگی نزدیك به سیاه استفاده میكنن اما كمی كمرنگ تر تا نسبت به بقیه عناصر داخل صفحه غیرعادی به نظر نیان.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/never-use-black/3.jpg&quot; alt=&quot;never-use-black&quot; title=&quot;در طراحی خود هرگز از رنگ سیاه استفاده نكنید&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;در بالا چند تصویر از مثال هایی كه زدم رو میتونید ببینید. سایت &lt;code class=&quot;highlighter-rouge&quot;&gt;Dribbble&lt;/code&gt; امكانات خیلی خوبی برای جستجو كردن تصاویر بر اساس رنگ داره كه میتونید از اون استفاده كنید. مثلا كارهای مربوط به &lt;a href=&quot;http://dribbble.com/colors/000000?percent=25&amp;amp;variance=0&quot;&gt;سیاه خالص&lt;/a&gt; رو جستجو كنید و كارهای &lt;a href=&quot;http://dribbble.com/colors/292724?percent=25&amp;amp;variance=15&quot;&gt;سیاه طبیعی&lt;/a&gt;. كارهای كدوم رنگ احساس بهتری داره؟ به نظر من كه سیاه خالص جالب نیست!&lt;/p&gt;
+
+&lt;p&gt;این فقط در مورد روشنایی رنگ ها نیست.&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;درصد اشباع بسیار مهم است&lt;/h4&gt;
+
+&lt;p&gt;وقتی با خاكستری كار میكنید اضافه كردن كمی رنگ به اون میتونه احساس كسل كننده بودن رو از بین ببره. مقدار رنگی كه میتونید اضافه كنید باید با مقدار تاریكی متناسب باشه.&lt;/p&gt;
+
+&lt;p&gt;اگر منظورم رو متوجه نشدید بیاید به فیس بوك نگاهی بكنیم. چرا رابط كاربری موبایل فیس بوك احساس خیلی خوبی به ما میده؟ چون همه رنگ های خاكستری موجود در طرح با رنگِ آبیِ فیس بوك پر شده.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/never-use-black/4.jpg&quot; alt=&quot;never-use-black&quot; title=&quot;در طراحی خود هرگز از رنگ سیاه استفاده نكنید&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;نكته آخر : وقتی رنگ سیاه رو توی انتخاب گر رنگ پیدا میكنید، اول از خودتون سوال كنید كه آیا واقعا به رنگ سیاه خالص نیاز دارید یا میتونید رنگ طبیعی تری رو برای كار خودتون انتخاب كنید؟ اگر بهش نیاز نداشتید از قسمت چپ انتخاب گر رنگ دوری كنید.&lt;/p&gt;
+
+&lt;p&gt;منبع : &lt;a href=&quot;http://ianstormtaylor.com&quot;&gt;ianstormtaylor.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;اگر این مطلب براتون مفید بود اون رو با دوستانتون به اشتراك بذارید :)&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 18 Apr 2013 00:00:00 +0430</pubDate>
+        <link>http://rezaaa.github.io//never-use-black.html</link>
+        <guid isPermaLink="true">http://rezaaa.github.io//never-use-black.html</guid>
+        
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>استفاده از Calc در CSS برای ایجاد طرح های هوشمند</title>
+        <description>&lt;p&gt;یكی از قسمت های مهم هر صفحه وب تعیین سایز بخش های مختلف اون هست و خصوصا در طراحی ریسپانسیو انعطاف پذیر بودن اون خیلی اهمیت داره. تابع Calc یكی از توابع جدیدی هست كه به CSS3 اضافه شده و با استفاده از اون میتونید به راحتی سایز هر قسمت از طرح خودتون رو با متدهای دلخواه محاسباتی تعیین كنید!&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;به خاطر استفاده زیادی كه از این تابع تا حالا كردم مفید دونستم كه در موردش توی وبلاگم مطلبی بنویسم تا شما هم باهاش آشنا بشید و بتونید ازش استفاده كنید.&lt;/p&gt;
+
+&lt;p&gt;این تابع امكان استفاده از محاسبات در خاصیت ها CSS رو ممكن میكنه! به مثال زیر توجه كنید:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;#test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;#test&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;350px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-moz-calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;350px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-webkit-calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;350px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#f0f0f0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;test&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;به نمونه های زیر هم دقت كنید:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;/* basic calc */&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.simpleBlock&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;/* calc in calc */&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.complexBlock&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10%&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;میبینید كه خیلی راحت با استفاده از Calc میتونید محاسبات رو توی خاصیت ها به كار ببرید.&lt;/p&gt;
+
+&lt;p&gt;مثلا یكی از كاربردهای كه این تابع برای من داشت وسط قرار دادن فلش های كنترلی یك اسلایدشو بود كه من با استفاده از Calc در خاصیت &lt;code class=&quot;highlighter-rouge&quot;&gt;Top&lt;/code&gt; اون رو &lt;code class=&quot;highlighter-rouge&quot;&gt;50%&lt;/code&gt; قرار دادم و نصف ارتفاع تصویر فلش رو ازش كم كردم. به این صورت:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:calc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;در واقع ارتفاع تصویر من &lt;code class=&quot;highlighter-rouge&quot;&gt;40px&lt;/code&gt; هست و چون من میخوام تصویرم به صورت عمودی وسط صفحه قرار بگیره اندازه ارتفاع  &lt;code class=&quot;highlighter-rouge&quot;&gt;(height)&lt;/code&gt; رو نصف میكنم تا &lt;code class=&quot;highlighter-rouge&quot;&gt;20px&lt;/code&gt; از بالا و &lt;code class=&quot;highlighter-rouge&quot;&gt;20px&lt;/code&gt; از پایین كم كنه. اگر در حالت عادی فقط &lt;code class=&quot;highlighter-rouge&quot;&gt;50%&lt;/code&gt; رو بهش بدید دقیقا وسط قرار نمیگیره و &lt;code class=&quot;highlighter-rouge&quot;&gt;40px&lt;/code&gt; پایین تر میاد كه بعد باید &lt;code class=&quot;highlighter-rouge&quot;&gt;20px&lt;/code&gt; از بالا كم كنید:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:-20px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;اینطوری هم دستورهای بیشتری نیاز داره و هم در حالت ریسپانسیو با مشكل مواجه میشه.&lt;/p&gt;
+
+&lt;p&gt;میتونید از عملگرهای محسباتی زیر در این تابع استفاده كنید:&lt;/p&gt;
+
+&lt;p&gt;جمع (+)&lt;/p&gt;
+
+&lt;p&gt;تفریق (-)&lt;/p&gt;
+
+&lt;p&gt;ضرب (*)&lt;/p&gt;
+
+&lt;p&gt;تقسیم (/)&lt;/p&gt;
+
+&lt;p&gt;این تابع در آینده تكمیل میشه و امكانات خیلی بهتری رو بهش اضافه میكن. اما در حال حاضر فقط از همین محاسبات پشتیبانی میكنه.&lt;/p&gt;
+
+&lt;p&gt;به این هم توجه كنید كه برای پشتیبانی Calc در مرورگرهای مختلف حالت های &lt;code class=&quot;highlighter-rouge&quot;&gt;-moz&lt;/code&gt; و &lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit&lt;/code&gt; رو فراموش نكنید.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 15 Mar 2013 00:00:00 +0330</pubDate>
+        <link>http://rezaaa.github.io//how-to-use-css-calc.html</link>
+        <guid isPermaLink="true">http://rezaaa.github.io//how-to-use-css-calc.html</guid>
+        
+        
+        <category>tutorial</category>
+        
+      </item>
+    
+  </channel>
+</rss>

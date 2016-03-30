@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>استفاده از Calc در CSS برای ایجاد طرح های هوشمند</title>
+  <meta name="description" content="یكی از قسمت های مهم هر صفحه وب تعیین سایز بخش های مختلف اون هست و خصوصا در طراحی ریسپانسیو انعطاف پذیر بودن اون خیلی اهمیت داره. تابع Calc یكی از توابع جدیدی...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://rezaaa.github.io//how-to-use-css-calc.html">
+  <link rel="alternate" type="application/rss+xml" title="محمد رضا محمودی" href="http://rezaaa.github.io//feed.xml">
+</head>
+
+
+  <body>
+    <div class="main">
+        <div class="header">
+    <div class="inner clear">
+        <div class="logo">
+            <a href="/" title="محمد رضا محمودی"></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="twitter"><a href="https://twitter.com/rezamahmoudii" target="_blank" rel="nofollow"><span class="icon-twitter"></span>توییتر</a></li>
+                <li class="github"><a href="https://github.com/rezaaa" target="_blank" rel="nofollow"><span class="icon-github"></span>گیت‌هاب</a></li>
+                <li class="spotify"><a href="spotify:user:1177515202" rel="nofollow"><span class="icon-spotify"></span>اسپاتیفای</a></li>
+                <li class="linkedin"><a href="https://ir.linkedin.com/in/rezamahmoudi" target="_blank" rel="nofollow"><span class="icon-linkedin"></span>لینکداین</a></li>
+            </ul>
+        </div>
+        <div class="newsletter">
+            <a href=" /feed.xml " class="btn">مشترک خبرنامه شوید</a>
+        </div>
+    </div>
+</div>
+        <div class="content-wrapper">
+            <div class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="title">
+        <div class="info clear">
+            <div class="date">جمعه 25 اسفند 1391</div>
+<!--
+            <div class="separator"></div>
+            <div class="category"><a href="">شخصی</a></div>
+-->
+        </div>
+        <h1>استفاده از Calc در CSS برای ایجاد طرح های هوشمند</h1>
+    </div>
+    <div class="content">
+        <p>یكی از قسمت های مهم هر صفحه وب تعیین سایز بخش های مختلف اون هست و خصوصا در طراحی ریسپانسیو انعطاف پذیر بودن اون خیلی اهمیت داره. تابع Calc یكی از توابع جدیدی هست كه به CSS3 اضافه شده و با استفاده از اون میتونید به راحتی سایز هر قسمت از طرح خودتون رو با متدهای دلخواه محاسباتی تعیین كنید!</p>
+
+<!--more-->
+
+<p>به خاطر استفاده زیادی كه از این تابع تا حالا كردم مفید دونستم كه در موردش توی وبلاگم مطلبی بنویسم تا شما هم باهاش آشنا بشید و بتونید ازش استفاده كنید.</p>
+
+<p>این تابع امكان استفاده از محاسبات در خاصیت ها CSS رو ممكن میكنه! به مثال زیر توجه كنید:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nf">#test</span><span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.4</span><span class="p">);</span>
+    <span class="nl">width</span><span class="p">:</span><span class="m">400px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span><span class="m">0px</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#test</span> <span class="nt">p</span><span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">350px</span> <span class="n">-</span> <span class="m">50px</span><span class="p">);</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="n">-moz-calc</span><span class="p">(</span><span class="m">350px</span> <span class="n">-</span> <span class="m">50px</span><span class="p">);</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="n">-webkit-calc</span><span class="p">(</span><span class="m">350px</span> <span class="n">-</span> <span class="m">50px</span><span class="p">);</span>
+    <span class="nl">background</span><span class="p">:</span><span class="m">#f0f0f0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span><span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"test"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<p>به نمونه های زیر هم دقت كنید:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">/* basic calc */</span>
+<span class="nc">.simpleBlock</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100%</span> <span class="n">-</span> <span class="m">100px</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* calc in calc */</span>
+<span class="nc">.complexBlock</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100%</span> <span class="n">-</span> <span class="m">50%</span> <span class="p">/</span> <span class="m">3</span><span class="p">);</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="n">calc</span><span class="p">(</span><span class="m">3%</span> <span class="n">-</span> <span class="m">2px</span><span class="p">);</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">10%</span> <span class="err">+</span> <span class="m">10px</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>میبینید كه خیلی راحت با استفاده از Calc میتونید محاسبات رو توی خاصیت ها به كار ببرید.</p>
+
+<p>مثلا یكی از كاربردهای كه این تابع برای من داشت وسط قرار دادن فلش های كنترلی یك اسلایدشو بود كه من با استفاده از Calc در خاصیت <code class="highlighter-rouge">Top</code> اون رو <code class="highlighter-rouge">50%</code> قرار دادم و نصف ارتفاع تصویر فلش رو ازش كم كردم. به این صورت:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">top</span><span class="nd">:calc</span><span class="o">(</span><span class="nt">50</span><span class="o">%</span> <span class="nt">-</span> <span class="nt">20px</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<p>در واقع ارتفاع تصویر من <code class="highlighter-rouge">40px</code> هست و چون من میخوام تصویرم به صورت عمودی وسط صفحه قرار بگیره اندازه ارتفاع  <code class="highlighter-rouge">(height)</code> رو نصف میكنم تا <code class="highlighter-rouge">20px</code> از بالا و <code class="highlighter-rouge">20px</code> از پایین كم كنه. اگر در حالت عادی فقط <code class="highlighter-rouge">50%</code> رو بهش بدید دقیقا وسط قرار نمیگیره و <code class="highlighter-rouge">40px</code> پایین تر میاد كه بعد باید <code class="highlighter-rouge">20px</code> از بالا كم كنید:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">margin-top</span><span class="nd">:-20px</span><span class="o">;</span>
+</code></pre>
+</div>
+
+<p>اینطوری هم دستورهای بیشتری نیاز داره و هم در حالت ریسپانسیو با مشكل مواجه میشه.</p>
+
+<p>میتونید از عملگرهای محسباتی زیر در این تابع استفاده كنید:</p>
+
+<p>جمع (+)</p>
+
+<p>تفریق (-)</p>
+
+<p>ضرب (*)</p>
+
+<p>تقسیم (/)</p>
+
+<p>این تابع در آینده تكمیل میشه و امكانات خیلی بهتری رو بهش اضافه میكن. اما در حال حاضر فقط از همین محاسبات پشتیبانی میكنه.</p>
+
+<p>به این هم توجه كنید كه برای پشتیبانی Calc در مرورگرهای مختلف حالت های <code class="highlighter-rouge">-moz</code> و <code class="highlighter-rouge">-webkit</code> رو فراموش نكنید.</p>
+
+    </div>
+    <div class="share">
+        <h4>به اشتراک بگذارید</h4>
+        <div class="share-socials clear">
+            <a href="https://twitter.com/intent/tweet?text=استفاده از Calc در CSS برای ایجاد طرح های هوشمند&url=http://rezaaa.github.io//how-to-use-css-calc.html&via=rezamahmoudii&related=rezamahmoudii" rel="nofollow" target="_blank" class="twitter"><span class="icon-twitter"></span>توییتر</a>
+            <a href="https://facebook.com/sharer.php?u=http://rezaaa.github.io//how-to-use-css-calc.html&p[title]=استفاده از Calc در CSS برای ایجاد طرح های هوشمند" rel="nofollow" target="_blank" class="facebook"><span class="icon-facebook"></span>فیس‌بوک</a>
+            <a href="https://plus.google.com/share?url=http://rezaaa.github.io//how-to-use-css-calc.html" rel="nofollow" target="_blank" class="google-plus"><span class="icon-google-plus"></span>گوگل پلاس</a>
+            <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://rezaaa.github.io//how-to-use-css-calc.html&title=استفاده از Calc در CSS برای ایجاد طرح های هوشمند&summary=Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+&source=http://rezaaa.github.io/" rel="nofollow" target="_blank" class="linkedin"><span class="icon-linkedin"></span>لینکداین</a>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    <div class="footer">
+    <div class="inner clear">
+        <div class="footer-right-side">محمد رضا محمودی</div>
+        <div class="footer-middle"><span class="icon-heart"></span></div>
+        <div class="footer-left-side ltr">۱۳۹۱ - ۱۳۹۵</div>
+    </div>
+</div>
+  <script src="/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

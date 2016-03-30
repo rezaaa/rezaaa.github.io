@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ایجاد فوتر چسبان با استفاده از Display:Table</title>
+  <meta name="description" content="فوتر چسبان یا Dynamic Sticky Footer به فوتری گفته میشه که اگر محتوای موجود، کمتر از مقداری باشه که باعث زیاد شدن ارتفاع صفحه بشه، فوتر باید به صورت ثابت به پ...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://rezaaa.github.io//how-to-make-a-sticky-footer-with-display-table.html">
+  <link rel="alternate" type="application/rss+xml" title="محمد رضا محمودی" href="http://rezaaa.github.io//feed.xml">
+</head>
+
+
+  <body>
+    <div class="main">
+        <div class="header">
+    <div class="inner clear">
+        <div class="logo">
+            <a href="/" title="محمد رضا محمودی"></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="twitter"><a href="https://twitter.com/rezamahmoudii" target="_blank" rel="nofollow"><span class="icon-twitter"></span>توییتر</a></li>
+                <li class="github"><a href="https://github.com/rezaaa" target="_blank" rel="nofollow"><span class="icon-github"></span>گیت‌هاب</a></li>
+                <li class="spotify"><a href="spotify:user:1177515202" rel="nofollow"><span class="icon-spotify"></span>اسپاتیفای</a></li>
+                <li class="linkedin"><a href="https://ir.linkedin.com/in/rezamahmoudi" target="_blank" rel="nofollow"><span class="icon-linkedin"></span>لینکداین</a></li>
+            </ul>
+        </div>
+        <div class="newsletter">
+            <a href=" /feed.xml " class="btn">مشترک خبرنامه شوید</a>
+        </div>
+    </div>
+</div>
+        <div class="content-wrapper">
+            <div class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="title">
+        <div class="info clear">
+            <div class="date">سه‌شنبه 06 آبان 1393</div>
+<!--
+            <div class="separator"></div>
+            <div class="category"><a href="">شخصی</a></div>
+-->
+        </div>
+        <h1>ایجاد فوتر چسبان با استفاده از Display:Table</h1>
+    </div>
+    <div class="content">
+        <p><img src="/images/sticky-footer-table/1.jpg" alt="ایجاد فوتر چسبان با استفاده از Display:Table" title="ایجاد فوتر چسبان با استفاده از Display:Table" /></p>
+
+<p>فوتر چسبان یا Dynamic Sticky Footer به فوتری گفته میشه که اگر محتوای موجود، کمتر از مقداری باشه که باعث زیاد شدن ارتفاع صفحه بشه، فوتر باید به صورت ثابت به پایین صفحه بچسبه و در صورتی که محتوا زیاد و ادامه دار باشه، فوتر باید خیلی عادی در ادامه محتوا و انتهای صفحه قرار بگیره. تصویر زیر به درک این موضوع بیشتر کمک میکنه.</p>
+
+<!--more-->
+
+<p>بیشتر از یک سال پیش مطلبی در مورد <a href="/how-to-make-a-sticky-footer.html">نحوه نوشتن فوتر چسبان یا Sticky Footer</a> منتشر کرده بودم، اما این بار با یه روش جدید میتونید همین کار رو فقط با CSS انجام بدید.</p>
+
+<p>چون این مطلب به Table مرتبط هست بهتره بدونید که ۲ نوع Table وجود داره که یک نوع با استفاده از تگ <code class="highlighter-rouge">&lt;table&gt;</code> ساخته میشه، و نوع دیگه خواص Table در CSS هست که میتونیم این خواص رو به هرچیزی بدیم تا رفتار شبیه به جدول داشته باشه.</p>
+
+<h4 id="css---table">خواص CSS مربوط به Table</h4>
+
+<p>خواص CSSای که مربوط به <code class="highlighter-rouge">Table</code> هست رو براتون می‌نویسم تا باهاش آشنا بشید.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">table</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="n">table</span> <span class="p">}</span>
+<span class="nt">tr</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-row</span> <span class="p">}</span>
+<span class="nt">thead</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-header-group</span> <span class="p">}</span>
+<span class="nt">tbody</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-row-group</span> <span class="p">}</span>
+<span class="nt">tfoot</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-footer-group</span> <span class="p">}</span>
+<span class="nt">col</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-column</span> <span class="p">}</span>
+<span class="nt">colgroup</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-column-group</span> <span class="p">}</span>
+<span class="nt">td</span><span class="o">,</span> <span class="nt">th</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-cell</span> <span class="p">}</span>
+<span class="nt">caption</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">table-caption</span> <span class="p">}</span>
+</code></pre>
+</div>
+<p>در طراحی های مدرن همه از Table فراری هستند و دلیلش هم مشخصه که اگر دوست داشتید میتونید از <a href="http://phrogz.net/css/WhyTablesAreBadForLayout.html">اینجا</a> دلایلش رو بخونید. اما این بار میخوایم از خواص سی اس اس Tableها استفاده جالبی بکنیم و نشون بدیم که در خیلی از موارد این خواص میتونن خیلی مفید و کاربردی باشن.</p>
+
+<h4 id="displaytable">ترفند ایجاد فوتر چسبان با استفاده از Display:table</h4>
+
+<p>ساختار HTML مورد نیاز برای انجام این کار به شکل زیر هست:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+    Content
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer"</span><span class="nt">&gt;</span>
+    Footer
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<p>یه بخش برای محتوا داریم و یه بخش هم برای فوتر.</p>
+
+<p>حالا کد CSSای که نیاز داریم باید به شکل زیر نوشته بشه (سایزها و رنگ‌ها رو میتونید به دلخواه عوض کنید):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">body</span><span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span><span class="n">table</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="p">{</span>
+    <span class="nl">height</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.main</span><span class="p">{</span>
+    <span class="nl">height</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span>
+    <span class="nl">padding-bottom</span><span class="p">:</span><span class="m">20px</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span><span class="m">#eee</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span><span class="nb">table-row</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.footer</span><span class="p">{</span>
+    <span class="c">/*height:30px;*/</span>
+    <span class="nl">line-height</span><span class="p">:</span><span class="m">30px</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span><span class="m">#00f0ad</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span><span class="nb">table-row</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>در کدهای CSS میتونید ببینید که به body خاصیت <code class="highlighter-rouge">display:table</code> و همچنین به ۲ قسمتی که توی صفحه وجود داره <code class="highlighter-rouge">display:table-row</code> داده شده. در صورتی که با جدول های HTML کار کرده باشید باید بدونید که اگر یه جدول با هر ارتفاعی داشته باشید، سطرهای داخل اون خود به خود ارتفاعشون رو جوری تنظیم میکنن که کل جدول رو پر کنن.</p>
+
+<p>در این روش نوشتن فوتر چسبان هم ما از همین قابلیت جدول استفاده کردیم. اگر دوست ندارید که به body خاصیت <code class="highlighter-rouge">display:table</code> بدید، میتونید کل صفحه رو بعد از body در یک تگ مناسب مثل div با کلاس، مثلا wrapper بندازید و بعد به اون <code class="highlighter-rouge">display:table</code> اضافه کنید.</p>
+
+<p>ممکنه بگید که با راه حل های Flexbox همه این کارها رو میشه خیلی بهتر انجام داد و چرا باید از خواص Table استفاده کنیم؟!</p>
+
+<p>در جواب این سوال باید بگم با وجود اینکه من تمایلی به استفاده و پشتیبانی از مرورگرهای قدیمی ندارم اما به دلیل استفاده اکثر کاربران (مخصوصا در ایران) از مرورگرهای به روز نشده و قدیمی و همچنین وضعیت کاری خودم که روی پروژه های بانکی کار میکنم، مجبور به استفاده از روش هایی هستم که روی بیشتر مرورگرها جواب بده و به نظر خودم فعلا همین روش ها جوابگو هستند تا وضعیت به مرور بهتر بشه. [<a href="http://www.netmarketshare.com/browser-market-share.aspx?qprid=2&amp;qpcustomd=0">+</a>]</p>
+
+<p>در پایان نمونه کامل شده این فوتر رو از <a href="http://jsfiddle.net/rezaaa/L6qnr632/">اینجا</a>  ببینید.</p>
+
+
+    </div>
+    <div class="share">
+        <h4>به اشتراک بگذارید</h4>
+        <div class="share-socials clear">
+            <a href="https://twitter.com/intent/tweet?text=ایجاد فوتر چسبان با استفاده از Display:Table&url=http://rezaaa.github.io//how-to-make-a-sticky-footer-with-display-table.html&via=rezamahmoudii&related=rezamahmoudii" rel="nofollow" target="_blank" class="twitter"><span class="icon-twitter"></span>توییتر</a>
+            <a href="https://facebook.com/sharer.php?u=http://rezaaa.github.io//how-to-make-a-sticky-footer-with-display-table.html&p[title]=ایجاد فوتر چسبان با استفاده از Display:Table" rel="nofollow" target="_blank" class="facebook"><span class="icon-facebook"></span>فیس‌بوک</a>
+            <a href="https://plus.google.com/share?url=http://rezaaa.github.io//how-to-make-a-sticky-footer-with-display-table.html" rel="nofollow" target="_blank" class="google-plus"><span class="icon-google-plus"></span>گوگل پلاس</a>
+            <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://rezaaa.github.io//how-to-make-a-sticky-footer-with-display-table.html&title=ایجاد فوتر چسبان با استفاده از Display:Table&summary=Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+&source=http://rezaaa.github.io/" rel="nofollow" target="_blank" class="linkedin"><span class="icon-linkedin"></span>لینکداین</a>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    <div class="footer">
+    <div class="inner clear">
+        <div class="footer-right-side">محمد رضا محمودی</div>
+        <div class="footer-middle"><span class="icon-heart"></span></div>
+        <div class="footer-left-side ltr">۱۳۹۱ - ۱۳۹۵</div>
+    </div>
+</div>
+  <script src="/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

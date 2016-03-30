@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>استفاده از Calc در CSS برای ایجاد طرح های هوشمند</title>
   <meta name="description" content="یكی از قسمت های مهم هر صفحه وب تعیین سایز بخش های مختلف اون هست و خصوصا در طراحی ریسپانسیو انعطاف پذیر بودن اون خیلی اهمیت داره. تابع Calc یكی از توابع جدیدی...">
-
+  <!-- Twitter cards metadatas -->
+  
+  <meta name="twitter:card" content="یكی از قسمت های مهم هر صفحه وب تعیین سایز بخش های مختلف اون هست و خصوصا در طراحی ریسپانسیو...">
+  
+  <meta name="twitter:site" content="@rezamahmoudii">
+  <meta name="twitter:creator" content="@rezamahmoudii">
+  
+  <meta name="twitter:title" content="استفاده از Calc در CSS برای ایجاد طرح های هوشمند">
+  
+  
+  <meta name="twitter:url" content="http://rezamahmoudi.ir/how-to-use-css-calc.html">
+  
+  
+  <meta name="twitter:description" content="طراح و توسعه دهنده رابط کاربری">
+  
+  
+  <meta name="twitter:image:src" content="http://rezamahmoudi.ir/images/blog-img.jpg">
+  
+    
+  <!-- facebook Open Graph Metadatas -->
+<!--  <meta content="your_facebook_app_id" property="fb:app_id">-->
+  <meta content="محمد رضا محمودی" property="og:site_name">
+  
+    <meta content="استفاده از Calc در CSS برای ایجاد طرح های هوشمند" property="og:title">
+  
+  
+    <meta content="استفاده از Calc در CSS برای ایجاد طرح های هوشمند" property="og:type">
+  
+  
+    <meta content="یكی از قسمت های مهم هر صفحه وب تعیین سایز بخش های مختلف اون هست و خصوصا در طراحی ریسپانسیو..." property="og:description">
+  
+  
+    <meta content="http://rezamahmoudi.ir/how-to-use-css-calc.html" property="og:url">
+  
+  
+    <meta content="2013-03-15T00:00:00+03:30" property="article:published_time">
+    <meta content="http://rezamahmoudi.ir/about/" property="article:author">
+  
+  <meta content="http://rezamahmoudi.ir/images/blog-img.jpg" property="og:image">
+  
+    
+    <meta content="tutorial" property="article:section">
+    
+  
+  
+    
+  
+  
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://rezaaa.github.io/how-to-use-css-calc.html">
-  <link rel="alternate" type="application/rss+xml" title="محمد رضا محمودی" href="http://rezaaa.github.io/feed.xml">
+  <link rel="canonical" href="http://rezamahmoudi.ir/how-to-use-css-calc.html">
+  <link rel="alternate" type="application/rss+xml" title="محمد رضا محمودی" href="http://rezamahmoudi.ir/feed.xml">
 </head>
 
 
@@ -27,7 +74,7 @@
                 <li class="github"><a href="https://github.com/rezaaa" target="_blank" rel="nofollow"><span class="icon-github"></span>گیت‌هاب</a></li>
                 <li class="spotify"><a href="spotify:user:1177515202" rel="nofollow"><span class="icon-spotify"></span>اسپاتیفای</a></li>
                 <li class="linkedin"><a href="https://ir.linkedin.com/in/rezamahmoudi" target="_blank" rel="nofollow"><span class="icon-linkedin"></span>لینکداین</a></li>
-                <li class="feed"><a href=" /feed.xml " target="_blank" rel="nofollow"><span class="icon-rss"></span>فید</a></li>
+                <li class="feed"><a href="/feed.xml%20" target="_blank" rel="nofollow"><span class="icon-rss"></span>فید</a></li>
                 <li class="contact"><a href="/contact"><span class="icon-email"></span> تماس با من</a></li>
             </ul>
         </div>
@@ -54,7 +101,8 @@
 
 <p>این تابع امكان استفاده از محاسبات در خاصیت ها CSS رو ممكن میكنه! به مثال زیر توجه كنید:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nf">#test</span><span class="p">{</span>
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="nf">#test</span><span class="p">{</span>
     <span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.4</span><span class="p">);</span>
     <span class="nl">width</span><span class="p">:</span><span class="m">400px</span><span class="p">;</span>
     <span class="nl">padding</span><span class="p">:</span><span class="m">0px</span> <span class="m">10px</span><span class="p">;</span>
@@ -69,7 +117,8 @@
 </code></pre>
 </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"test"</span><span class="nt">&gt;</span>
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"test"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre>
@@ -77,7 +126,8 @@
 
 <p>به نمونه های زیر هم دقت كنید:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">/* basic calc */</span>
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="c">/* basic calc */</span>
 <span class="nc">.simpleBlock</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100%</span> <span class="n">-</span> <span class="m">100px</span><span class="p">);</span>
 <span class="p">}</span>
@@ -95,13 +145,15 @@
 
 <p>مثلا یكی از كاربردهای كه این تابع برای من داشت وسط قرار دادن فلش های كنترلی یك اسلایدشو بود كه من با استفاده از Calc در خاصیت <code class="highlighter-rouge">Top</code> اون رو <code class="highlighter-rouge">50%</code> قرار دادم و نصف ارتفاع تصویر فلش رو ازش كم كردم. به این صورت:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">top</span><span class="nd">:calc</span><span class="o">(</span><span class="nt">50</span><span class="o">%</span> <span class="nt">-</span> <span class="nt">20px</span><span class="o">);</span>
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="nt">top</span><span class="nd">:calc</span><span class="o">(</span><span class="nt">50</span><span class="o">%</span> <span class="nt">-</span> <span class="nt">20px</span><span class="o">);</span>
 </code></pre>
 </div>
 
 <p>در واقع ارتفاع تصویر من <code class="highlighter-rouge">40px</code> هست و چون من میخوام تصویرم به صورت عمودی وسط صفحه قرار بگیره اندازه ارتفاع  <code class="highlighter-rouge">(height)</code> رو نصف میكنم تا <code class="highlighter-rouge">20px</code> از بالا و <code class="highlighter-rouge">20px</code> از پایین كم كنه. اگر در حالت عادی فقط <code class="highlighter-rouge">50%</code> رو بهش بدید دقیقا وسط قرار نمیگیره و <code class="highlighter-rouge">40px</code> پایین تر میاد كه بعد باید <code class="highlighter-rouge">20px</code> از بالا كم كنید:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">margin-top</span><span class="nd">:-20px</span><span class="o">;</span>
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="nt">margin-top</span><span class="nd">:-20px</span><span class="o">;</span>
 </code></pre>
 </div>
 
@@ -125,11 +177,10 @@
     <div class="share">
         <h4>به اشتراک بگذارید</h4>
         <div class="share-socials clear">
-            <a href="https://twitter.com/intent/tweet?text=استفاده از Calc در CSS برای ایجاد طرح های هوشمند&url=http://rezaaa.github.io/how-to-use-css-calc.html&via=&related=" rel="nofollow" target="_blank" class="twitter"><span class="icon-twitter"></span>توییتر</a>
-            <a href="https://facebook.com/sharer.php?u=http://rezaaa.github.io/how-to-use-css-calc.html&p[title]=استفاده از Calc در CSS برای ایجاد طرح های هوشمند" rel="nofollow" target="_blank" class="facebook"><span class="icon-facebook"></span>فیس‌بوک</a>
-            <a href="https://plus.google.com/share?url=http://rezaaa.github.io/how-to-use-css-calc.html" rel="nofollow" target="_blank" class="google-plus"><span class="icon-google-plus"></span>گوگل پلاس</a>
-            <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://rezaaa.github.io/how-to-use-css-calc.html&title=استفاده از Calc در CSS برای ایجاد طرح های هوشمند&summary=طراح و توسعه دهنده رابط کاربری
-&source=http://rezaaa.github.io" rel="nofollow" target="_blank" class="linkedin"><span class="icon-linkedin"></span>لینکداین</a>
+            <a href="https://twitter.com/intent/tweet?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20Calc%20%D8%AF%D8%B1%20CSS%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D8%B7%D8%B1%D8%AD%20%D9%87%D8%A7%DB%8C%20%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF&amp;url=http://rezamahmoudi.ir/how-to-use-css-calc.html&amp;via=&amp;related=" rel="nofollow" target="_blank" class="twitter"><span class="icon-twitter"></span>توییتر</a>
+            <a href="https://facebook.com/sharer.php?u=http://rezamahmoudi.ir/how-to-use-css-calc.html&amp;p%5Btitle%5D=%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20Calc%20%D8%AF%D8%B1%20CSS%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D8%B7%D8%B1%D8%AD%20%D9%87%D8%A7%DB%8C%20%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF" rel="nofollow" target="_blank" class="facebook"><span class="icon-facebook"></span>فیس‌بوک</a>
+            <a href="https://plus.google.com/share?url=http://rezamahmoudi.ir/how-to-use-css-calc.html" rel="nofollow" target="_blank" class="google-plus"><span class="icon-google-plus"></span>گوگل پلاس</a>
+            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://rezamahmoudi.ir/how-to-use-css-calc.html&amp;title=%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20Calc%20%D8%AF%D8%B1%20CSS%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF%20%D8%B7%D8%B1%D8%AD%20%D9%87%D8%A7%DB%8C%20%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF&amp;summary=%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%AA%D9%88%D8%B3%D8%B9%D9%87%20%D8%AF%D9%87%D9%86%D8%AF%D9%87%20%D8%B1%D8%A7%D8%A8%D8%B7%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C&amp;source=http://rezamahmoudi.ir" rel="nofollow" target="_blank" class="linkedin"><span class="icon-linkedin"></span>لینکداین</a>
         </div>
     </div>
 </div>

@@ -5,15 +5,15 @@
     <description>طراح و توسعه دهنده رابط کاربری</description>
     <link>http://rezamahmoudi.ir/</link>
     <atom:link href="http://rezamahmoudi.ir/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 31 Mar 2016 02:30:32 +0430</pubDate>
-    <lastBuildDate>Thu, 31 Mar 2016 02:30:32 +0430</lastBuildDate>
+    <pubDate>Fri, 01 Apr 2016 00:05:16 +0430</pubDate>
+    <lastBuildDate>Fri, 01 Apr 2016 00:05:16 +0430</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
         <title>ایجاد فوتر چسبان با استفاده از Display:Table</title>
         <description>&lt;p&gt;&lt;img src=&quot;/images/sticky-footer-table/1.jpg&quot; alt=&quot;ایجاد فوتر چسبان با استفاده از Display:Table&quot; title=&quot;ایجاد فوتر چسبان با استفاده از Display:Table&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;فوتر چسبان یا Dynamic Sticky Footer به فوتری گفته میشه که اگر محتوای موجود، کمتر از مقداری باشه که باعث زیاد شدن ارتفاع صفحه بشه، فوتر باید به صورت ثابت به پایین صفحه بچسبه و در صورتی که محتوا زیاد و ادامه دار باشه، فوتر باید خیلی عادی در ادامه محتوا و انتهای صفحه قرار بگیره. تصویر زیر به درک این موضوع بیشتر کمک میکنه.&lt;/p&gt;
+&lt;p&gt;فوتر چسبان یا Dynamic Sticky Footer به فوتری گفته میشه که اگر محتوای موجود، کمتر از مقداری باشه که باعث زیاد شدن ارتفاع صفحه بشه، فوتر باید به صورت ثابت به پایین صفحه بچسبه و در صورتی که محتوا زیاد و ادامه دار باشه، فوتر باید خیلی عادی در ادامه محتوا و انتهای صفحه قرار بگیره.&lt;/p&gt;
 
 &lt;!--more--&gt;
 

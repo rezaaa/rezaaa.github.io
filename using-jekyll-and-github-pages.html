@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>استفاده از Jekyll و Github Pages</title>
+  <meta name="description" content="جکیل (Jekyll) یک سیستم سایت‌ساز و بلاگینگِ استتیک، بسیار سریع و ساده می‌باشد که با استفاده از زبان Ruby توسط Tom Preston Werner، موسس گیت‌هاب نوشته شده است و...">
+  <!-- Twitter cards metadatas -->
+  
+  <meta name="twitter:card" content="جکیل (Jekyll) یک سیستم سایت‌ساز و بلاگینگِ استتیک، بسیار سریع و ساده می‌باشد که با استفاده از زبان Ruby توسط Tom Preston Werner، موسس گیت‌هاب نوشته شده است و با...">
+  
+  <meta name="twitter:site" content="@rezamahmoudii">
+  <meta name="twitter:creator" content="@rezamahmoudii">
+  
+  <meta name="twitter:title" content="استفاده از Jekyll و Github Pages">
+  
+  
+  <meta name="twitter:url" content="http://rezamahmoudi.ir/using-jekyll-and-github-pages.html">
+  
+  
+  <meta name="twitter:description" content="طراح و توسعه دهنده رابط کاربری">
+  
+  
+  <meta name="twitter:image:src" content="http://rezamahmoudi.ir/images/sticky-footer-table/1.jpg">
+  
+    
+  <!-- facebook Open Graph Metadatas -->
+<!--  <meta content="your_facebook_app_id" property="fb:app_id">-->
+  <meta content="محمد رضا محمودی" property="og:site_name">
+  
+    <meta content="استفاده از Jekyll و Github Pages" property="og:title">
+  
+  
+    <meta content="استفاده از Jekyll و Github Pages" property="og:type">
+  
+  
+    <meta content="جکیل (Jekyll) یک سیستم سایت‌ساز و بلاگینگِ استتیک، بسیار سریع و ساده می‌باشد که با استفاده از زبان Ruby توسط..." property="og:description">
+  
+  
+    <meta content="http://rezamahmoudi.ir/using-jekyll-and-github-pages.html" property="og:url">
+  
+  
+  <meta content="http://rezamahmoudi.ir/images/sticky-footer-table/1.jpg" property="og:image">
+  
+  
+    
+    <meta content="tutorial" property="article:section">
+    
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://rezamahmoudi.ir/using-jekyll-and-github-pages.html">
+  <link rel="alternate" type="application/rss+xml" title="محمد رضا محمودی" href="http://rezamahmoudi.ir/feed.xml">
+</head>
+
+
+  <body>
+    <div class="main">
+        <div class="header">
+    <div class="inner clear">
+        <div class="logo">
+            <a href="/" title="محمد رضا محمودی"></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="twitter"><a href="https://twitter.com/rezamahmoudii" target="_blank" rel="nofollow"><span class="icon-twitter"></span>توییتر</a></li>
+                <li class="github"><a href="https://github.com/rezaaa" target="_blank" rel="nofollow"><span class="icon-github"></span>گیت‌هاب</a></li>
+                <li class="spotify"><a href="spotify:user:1177515202" rel="nofollow"><span class="icon-spotify"></span>اسپاتیفای</a></li>
+                <li class="linkedin"><a href="https://ir.linkedin.com/in/rezamahmoudi" target="_blank" rel="nofollow"><span class="icon-linkedin"></span>لینکداین</a></li>
+                <li class="feed"><a href="/feed.xml%20" target="_blank" rel="nofollow"><span class="icon-rss"></span>فید</a></li>
+                <li class="contact"><a href="/contact"><span class="icon-email"></span> تماس با من</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        <div class="content-wrapper">
+            <div class="post single" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="title">
+        <div class="info clear">
+            <div class="date">شنبه 28 فروردین 1395</div>
+<!--
+            <div class="separator"></div>
+            <div class="category"><a href="">شخصی</a></div>
+-->
+        </div>
+        <h1>استفاده از Jekyll و Github Pages</h1>
+    </div>
+    <div class="content">
+        <p><img src="/images/jekyll/1.jpg" alt="استفاده از Jekyll و Github Pages" title="استفاده از Jekyll و Github Pages"></p>
+
+<p>جکیل (<a href="https://jekyllrb.com">Jekyll</a>) یک سیستم سایت‌ساز و بلاگینگِ استتیک، بسیار سریع و ساده می‌باشد که با استفاده از زبان <a href="https://www.ruby-lang.org/en/downloads/">Ruby</a> توسط <a href="http://tom.preston-werner.com/">Tom Preston Werner</a>، موسس گیت‌هاب نوشته شده است و با استفاده از <a href="https://daringfireball.net/projects/markdown/">Markdown</a> و تمپلیت انجین <a href="https://shopify.github.io/liquid/">Liquid</a> و ترکیب آنها در نهایت یک وب‌سایت آماده انتشار روی وب سرور مورد علاقه شما تولید میکند.</p>
+
+<!--more-->
+
+<p><strong>TL;DR :</strong> اگر تمایلی به خواندن مطالب طولانی ندارید بهتر است بدانید که در این پست در مورد برخی از مزایا و معایب جکیل و در پایان آموزش نصب روی مک و ویندوز و همچنین انتقال آن روی Github Pages توضیح داده خواهد شد.</p>
+
+<h4 id="section">جکیل برای چه افرادی مناسب است؟</h4>
+
+<p>جکیل در حالت کلی برای بلاگرها و وب‌مسترها مناسب است. برای استفاده از جکیل، مانند وردپرس نباید انتظار یک دکمه نصب سریع و صفحه مدیریت زیبا را داشته باشید. علاوه بر این که نصب جکیل ممکن است پر از چالش باشد برای تغییر ظاهر سایت به حالت‌های مورد نظرتان باید با HTML و CSS آشنایی داشته باشید. همچنین برای نوشتن پست باید با سینتکس‌های <a href="https://daringfireball.net/projects/markdown/">Markdown</a> آشنا باشید و توانایی کار با ترمینال یا کامندلاین در حدی که بین فولدرها حرکت کنید و دستورات مورد نیاز را اجرا کنید نیز مورد نیاز است.</p>
+
+<h4 id="section-1">به دیتابیس و زبان سمت سرور نیاز ندارد</h4>
+
+<p>کدهای تولید شده توسط جکیل فقط HTML, CSS و در صورت نیاز خودتان جاوا اسکریپت است و در حالت عادی هیچ نیازی به استفاده از زبان‌های سمت سرور و دیتابیس ندارید. بنابراین علاوه بر امنیت، سرعت بسیار بالایی دارد.</p>
+
+<p>برای اضافه کردن امکانات مختلف مانند سیستم نظردهی و فرم تماس میتوانید از <a href="http://www.jekyll-plugins.com/">پلاگین‌ها</a> و یا سرویس‌هایی که برای جکیل ایجاد شده‌اند استفاده کنید.</p>
+
+<p>همچنین برای تغییر ظاهر سایت میتوانید از <a href="http://jekyllthemes.org/">پوسته‌های آماده</a> استفاده کنید و یا یک پوسته طراحی کنید و با استفاده از <a href="https://jekyllrb.com/docs/templates/">مستندات جکیل</a> آن را به پوسته جکیل تبدیل کنید.</p>
+
+<h4 id="section-2">میزبانی رایگان روی گیت‌هاب</h4>
+
+<p>برای استفاده از جکیل نیازی به خرید هاست ندارید و به راحتی میتوانید از <a href="https://pages.github.com/">Github Pages</a> به عنوان هاستینگ استفاده کنید که علاوه بر رایگان بودن، بسیار امن و سریع است. برای اتصال دامنه هم میتوانید از سرویس‌های مدیریت DNS مثل <a href="http://cloudflare.com/">cloudflare.com</a> استفاده کنید. همچنین سورس کد وب سایتتان برای عموم قابل دسترس است و همه میتوانند از کدهای شما استفاده کنند.</p>
+
+<p>مشکلی که برای بسیاری از کاربران ایجاد میشود عدم پشتیبانی گیت‌هاب از اکثر پلاگین‌های جکیل است و فقط چند پلاگین ضروری را پشتیبانی میکند. برای مثال به عنوان یک کاربر فارسی زبان اگر نیاز داشته باشید تا از پلاگین تاریخ جلالی استفاده کنید بعد از انتقال فایل‌ها روی سرور، گیت‌هاب این پلاگین را نادیده میگیرد  و وب‌سایت را بدون این پلاگین اجرا میکند.</p>
+
+<p>راه حلی که برای این مسئله وجود دارد جلوگیری از Build خودکار گیت‌هاب و Build گرفتن از وبلاگ به صورت لوکال و انتقال فایل‌های تولید شده نهایی روی سرور است.</p>
+
+<p>همچنین از سرویس‌های دیگری مثل <a href="http://pages.gitlab.io/">Gitlab Pages</a> و حتی دراپ‌باکس هم برای هاستینگ میتوانید استفاده کنید.</p>
+
+<h4 id="section-3">نصب جکیل روی مک</h4>
+
+<p>نصب جکیل روی مک بدلیل از قبل نصب بودن روبی راحت‌تر از ویندوز است. در صورتی که نیاز به نصب مجدد روبی یا استفاده از نسخه‌های مختلف دارید از <a href="https://rvm.io/">RVM</a> یا روش‌های دیگر استفاده کنید. برای چک کردن نسخه روبی در حال استفاده از دستور <code class="highlighter-rouge">ruby -v</code> استفاده کنید.</p>
+
+<p>قبل از نصب جکیل نیاز به نصب چند پیش‌نیاز دارید:</p>
+
+<ul>
+  <li><a href="https://www.ruby-lang.org/en/downloads/">Ruby</a></li>
+  <li><a href="https://rubygems.org/pages/download">RubyGems</a></li>
+  <li><a href="https://nodejs.org/">NodeJS</a></li>
+  <li><a href="https://www.python.org/downloads/">Python 2.7</a></li>
+</ul>
+
+<p>بعد از نصب پیش‌نیازها در صفحه اصلی <a href="https://jekyllrb.com">سایت جکیل</a> دستورات مورد نیاز برای نصب وجود دارد که در صورت کامل بودن تمامی نیازمندی‌ها دستورات باید به راحتی اجرا شوند.</p>
+
+<p>ترمینال را باز کنید و دستور زیر را جهت نصب جم جکیل وارد کنید:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>gem install jekyll
+</code></pre>
+</div>
+<p>بعد از اتمام نصب به لوکیشن مورد نظر که میخواهید فولدر بلاگ یا وب‌سایتتان را بسازید بروید و دستور زیر را وارد کنید:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>jekyll new my-awesome-site
+</code></pre>
+</div>
+<p>بعد از اجرای دستور بالا جکیل در مکان مورد نظرتان یک فولدر به اسم <code class="highlighter-rouge">my-awesome-site</code> که دارای فایل‌های مورد نیاز است می سازد.</p>
+
+<p>با دستور <code class="highlighter-rouge">cd my-awesome-site</code> وارد این فولدر شوید و سپس برای Build شدن و اجرای وب‌سایت دستور زیر را وارد کنید:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>jekyll serve
+</code></pre>
+</div>
+
+<p>در صورتی که با موفقیت اجرا شود میتوانید از طریق آدرس <code class="highlighter-rouge">http://127.0.0.1:4000</code> وب‌سایت تولید شده را مشاهده کنید.</p>
+
+<h4 id="section-4">نصب جکیل روی ویندوز</h4>
+
+<p>روبی به صورت پیش فرض روی ویندوز نصب نیست و باید آن را نصب کنید. از طریق <a href="http://rubyinstaller.org/downloads/">RubyInstaller</a> میتوانید به راحتی روبی و آخرین نسخه DevKit را روی ویندوز نصب کنید.</p>
+
+<p>بعد از دانلود شدن، پکیج DevKit را اکسترکت کنید و از طریق Command Prompt وارد فولدر آن شوید. سپس دستورات زیر را اجرا کنید:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>ruby dk.rb init
+ruby dk.rb install
+</code></pre>
+</div>
+
+<p>در آخر با استفاده از دستور زیر جم جکیل را نصب کنید.</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>gem install jekyll
+</code></pre>
+</div>
+<p>در صورتی که با موفقیت اجرا شود میتوانید از طریق آدرس <code class="highlighter-rouge">http://127.0.0.1:4000</code> وب‌سایت تولید شده را مشاهده کنید.</p>
+
+<h4 id="github-pages">انتقال روی Github Pages</h4>
+
+<p>کافیست وارد گیت‌هاب شوید و یک <a href="https://github.com/new">ریپازیتوری جدید</a> با نام <code class="highlighter-rouge">username.github.io</code> بسازید. البته به جای username نام کاربری خودتان را بنویسید.</p>
+
+<p>به عنوان مثال نام کاربری من در گیت‌هاب <code class="highlighter-rouge">rezaaa</code> هست. بنابراین یک <a href="https://github.com/new">ریپازیتوری جدید</a> با نام <code class="highlighter-rouge">rezaaa.github.io</code> میسازم (نام کاربری خودتون رو جایگزین کنید) و با استفاده از دستور زیر آن را Clone میکنم:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>git clone https://github.com/rezaaa/rezaaa.github.io
+</code></pre>
+</div>
+<p>سپس با استفاده از دستورات زیر وارد فولدر <code class="highlighter-rouge">rezaaa.github.io</code> میشوم و یک فایل به اسم <code class="highlighter-rouge">index.html</code> که داخل آن متن <code class="highlighter-rouge">Hello World</code> نوشته شده میسازم.</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code><span class="nb">cd </span>username.github.io
+<span class="nb">echo</span> <span class="s2">"Hello World"</span> &gt; index.html
+</code></pre>
+</div>
+
+<p>حالا با استفاده از دستورات رایج گیت (اگر بلد نیستید در موردش سرچ کنید) فایل را کامیت و پوش میکنم.</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>git add --all
+git commit -m <span class="s2">"Initial commit"</span>
+git push -u origin master
+</code></pre>
+</div>
+
+<p>بعد از اتمام انتقال فایل با استفاده از آدرس <code class="highlighter-rouge">http://username.github.io</code> فایل ساخته شده را مشاهده کنید.</p>
+
+<p>برای انتقال فایل‌های جکیل کافیست آنها را داخل فولدر ساخته شده انتقال دهید و کامیت و پوش کنید.</p>
+
+<p>در صورتی که در روند نصب جکیل روی هر کدام از سیستم عامل‌ها به مشکل برخورد کردید از لینک <a href="http://jekyllrb.com/docs/installation/">Installation</a> استفاده و یا از <strong>بخش نظرات</strong> در پایان همین پست سوالاتتان را مطرح کنید.</p>
+
+
+    </div>
+    <div class="share">
+        <h4>به اشتراک بگذارید</h4>
+        <div class="share-socials clear">
+            <a href="https://twitter.com/intent/tweet?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20Jekyll%20%D9%88%20Github%20Pages&amp;url=http://rezamahmoudi.ir/using-jekyll-and-github-pages.html&amp;via=rezamahmoudii&amp;related=rezamahmoudii" rel="nofollow" target="_blank" class="twitter"><span class="icon-twitter"></span>توییتر</a>
+            <a href="https://facebook.com/sharer.php?u=http://rezamahmoudi.ir/using-jekyll-and-github-pages.html&amp;p%5Btitle%5D=%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20Jekyll%20%D9%88%20Github%20Pages" rel="nofollow" target="_blank" class="facebook"><span class="icon-facebook"></span>فیس‌بوک</a>
+            <a href="https://plus.google.com/share?url=http://rezamahmoudi.ir/using-jekyll-and-github-pages.html" rel="nofollow" target="_blank" class="google-plus"><span class="icon-google-plus"></span>گوگل پلاس</a>
+            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://rezamahmoudi.ir/using-jekyll-and-github-pages.html&amp;title=%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20Jekyll%20%D9%88%20Github%20Pages&amp;summary=%D8%B7%D8%B1%D8%A7%D8%AD%20%D9%88%20%D8%AA%D9%88%D8%B3%D8%B9%D9%87%20%D8%AF%D9%87%D9%86%D8%AF%D9%87%20%D8%B1%D8%A7%D8%A8%D8%B7%20%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%DB%8C&amp;source=http://rezamahmoudi.ir" rel="nofollow" target="_blank" class="linkedin"><span class="icon-linkedin"></span>لینکداین</a>
+        </div>
+    </div>
+    <div class="navigations single clear">
+        
+            <a href="/how-to-make-a-sticky-footer-with-display-table.html" class="btn back"><span class="icon-forward"></span>ایجاد فوتر چسبان با استفاده از Display:Table</a>
+        
+        
+    </div>
+    
+      <div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+
+var disqus_config = function () {
+this.page.url = "http://rezamahmoudi.ir/using-jekyll-and-github-pages.html"; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/using-jekyll-and-github-pages.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = 'https://rezamahmoudi.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>برای مشاهده نظرات لطفا جاوااسکریپت را فعال کنید <a href="https://disqus.com/?ref_noscript" rel="nofollow">قدرت گرفته از Disqus</a>
+</noscript>
+    
+</div>
+        </div>
+    </div>
+    <div class="footer">
+    <div class="inner clear">
+        <div class="footer-right-side">محمد رضا محمودی</div>
+        <div class="footer-middle"><span class="icon-heart"></span></div>
+        <div class="footer-left-side ltr">1391 - 1395</div>
+    </div>
+</div>
+  <script src="/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40051622-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  </body>
+</html>

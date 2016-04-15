@@ -5,9 +5,134 @@
     <description>طراح و توسعه دهنده رابط کاربری</description>
     <link>http://rezamahmoudi.ir/</link>
     <atom:link href="http://rezamahmoudi.ir/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Apr 2016 21:45:05 +0430</pubDate>
-    <lastBuildDate>Sun, 10 Apr 2016 21:45:05 +0430</lastBuildDate>
+    <pubDate>Sat, 16 Apr 2016 01:46:49 +0430</pubDate>
+    <lastBuildDate>Sat, 16 Apr 2016 01:46:49 +0430</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>استفاده از Jekyll و Github Pages</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/images/jekyll/1.jpg&quot; alt=&quot;استفاده از Jekyll و Github Pages&quot; title=&quot;استفاده از Jekyll و Github Pages&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;جکیل (&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;) یک سیستم سایت‌ساز و بلاگینگِ استتیک، بسیار سریع و ساده می‌باشد که با استفاده از زبان &lt;a href=&quot;https://www.ruby-lang.org/en/downloads/&quot;&gt;Ruby&lt;/a&gt; توسط &lt;a href=&quot;http://tom.preston-werner.com/&quot;&gt;Tom Preston Werner&lt;/a&gt;، موسس گیت‌هاب نوشته شده است و با استفاده از &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; و تمپلیت انجین &lt;a href=&quot;https://shopify.github.io/liquid/&quot;&gt;Liquid&lt;/a&gt; و ترکیب آنها در نهایت یک وب‌سایت آماده انتشار روی وب سرور مورد علاقه شما تولید میکند.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;strong&gt;TL;DR :&lt;/strong&gt; اگر تمایلی به خواندن مطالب طولانی ندارید بهتر است بدانید که در این پست در مورد برخی از مزایا و معایب جکیل و در پایان آموزش نصب روی مک و ویندوز و همچنین انتقال آن روی Github Pages توضیح داده خواهد شد.&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;جکیل برای چه افرادی مناسب است؟&lt;/h4&gt;
+
+&lt;p&gt;جکیل در حالت کلی برای بلاگرها و وب‌مسترها مناسب است. برای استفاده از جکیل، مانند وردپرس نباید انتظار یک دکمه نصب سریع و صفحه مدیریت زیبا را داشته باشید. علاوه بر این که نصب جکیل ممکن است پر از چالش باشد برای تغییر ظاهر سایت به حالت‌های مورد نظرتان باید با HTML و CSS آشنایی داشته باشید. همچنین برای نوشتن پست باید با سینتکس‌های &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; آشنا باشید و توانایی کار با ترمینال یا کامندلاین در حدی که بین فولدرها حرکت کنید و دستورات مورد نیاز را اجرا کنید نیز مورد نیاز است.&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;به دیتابیس و زبان سمت سرور نیاز ندارد&lt;/h4&gt;
+
+&lt;p&gt;کدهای تولید شده توسط جکیل فقط HTML, CSS و در صورت نیاز خودتان جاوا اسکریپت است و در حالت عادی هیچ نیازی به استفاده از زبان‌های سمت سرور و دیتابیس ندارید. بنابراین علاوه بر امنیت، سرعت بسیار بالایی دارد.&lt;/p&gt;
+
+&lt;p&gt;برای اضافه کردن امکانات مختلف مانند سیستم نظردهی و فرم تماس میتوانید از &lt;a href=&quot;http://www.jekyll-plugins.com/&quot;&gt;پلاگین‌ها&lt;/a&gt; و یا سرویس‌هایی که برای جکیل ایجاد شده‌اند استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;همچنین برای تغییر ظاهر سایت میتوانید از &lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;پوسته‌های آماده&lt;/a&gt; استفاده کنید و یا یک پوسته طراحی کنید و با استفاده از &lt;a href=&quot;https://jekyllrb.com/docs/templates/&quot;&gt;مستندات جکیل&lt;/a&gt; آن را به پوسته جکیل تبدیل کنید.&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;میزبانی رایگان روی گیت‌هاب&lt;/h4&gt;
+
+&lt;p&gt;برای استفاده از جکیل نیازی به خرید هاست ندارید و به راحتی میتوانید از &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; به عنوان هاستینگ استفاده کنید که علاوه بر رایگان بودن، بسیار امن و سریع است. برای اتصال دامنه هم میتوانید از سرویس‌های مدیریت DNS مثل &lt;a href=&quot;http://cloudflare.com/&quot;&gt;cloudflare.com&lt;/a&gt; استفاده کنید. همچنین سورس کد وب سایتتان برای عموم قابل دسترس است و همه میتوانند از کدهای شما استفاده کنند.&lt;/p&gt;
+
+&lt;p&gt;مشکلی که برای بسیاری از کاربران ایجاد میشود عدم پشتیبانی گیت‌هاب از اکثر پلاگین‌های جکیل است و فقط چند پلاگین ضروری را پشتیبانی میکند. برای مثال به عنوان یک کاربر فارسی زبان اگر نیاز داشته باشید تا از پلاگین تاریخ جلالی استفاده کنید بعد از انتقال فایل‌ها روی سرور، گیت‌هاب این پلاگین را نادیده میگیرد  و وب‌سایت را بدون این پلاگین اجرا میکند.&lt;/p&gt;
+
+&lt;p&gt;راه حلی که برای این مسئله وجود دارد جلوگیری از Build خودکار گیت‌هاب و Build گرفتن از وبلاگ به صورت لوکال و انتقال فایل‌های تولید شده نهایی روی سرور است.&lt;/p&gt;
+
+&lt;p&gt;همچنین از سرویس‌های دیگری مثل &lt;a href=&quot;http://pages.gitlab.io/&quot;&gt;Gitlab Pages&lt;/a&gt; و حتی دراپ‌باکس هم برای هاستینگ میتوانید استفاده کنید.&lt;/p&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;نصب جکیل روی مک&lt;/h4&gt;
+
+&lt;p&gt;نصب جکیل روی مک بدلیل از قبل نصب بودن روبی راحت‌تر از ویندوز است. در صورتی که نیاز به نصب مجدد روبی یا استفاده از نسخه‌های مختلف دارید از &lt;a href=&quot;https://rvm.io/&quot;&gt;RVM&lt;/a&gt; یا روش‌های دیگر استفاده کنید. برای چک کردن نسخه روبی در حال استفاده از دستور &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt; استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;قبل از نصب جکیل نیاز به نصب چند پیش‌نیاز دارید:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ruby-lang.org/en/downloads/&quot;&gt;Ruby&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://rubygems.org/pages/download&quot;&gt;RubyGems&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://nodejs.org/&quot;&gt;NodeJS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.python.org/downloads/&quot;&gt;Python 2.7&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;بعد از نصب پیش‌نیازها در صفحه اصلی &lt;a href=&quot;https://jekyllrb.com&quot;&gt;سایت جکیل&lt;/a&gt; دستورات مورد نیاز برای نصب وجود دارد که در صورت کامل بودن تمامی نیازمندی‌ها دستورات باید به راحتی اجرا شوند.&lt;/p&gt;
+
+&lt;p&gt;ترمینال را باز کنید و دستور زیر را جهت نصب جم جکیل وارد کنید:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;بعد از اتمام نصب به لوکیشن مورد نظر که میخواهید فولدر بلاگ یا وب‌سایتتان را بسازید بروید و دستور زیر را وارد کنید:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new my-awesome-site
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;بعد از اجرای دستور بالا جکیل در مکان مورد نظرتان یک فولدر به اسم &lt;code class=&quot;highlighter-rouge&quot;&gt;my-awesome-site&lt;/code&gt; که دارای فایل‌های مورد نیاز است می سازد.&lt;/p&gt;
+
+&lt;p&gt;با دستور &lt;code class=&quot;highlighter-rouge&quot;&gt;cd my-awesome-site&lt;/code&gt; وارد این فولدر شوید و سپس برای Build شدن و اجرای وب‌سایت دستور زیر را وارد کنید:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;در صورتی که با موفقیت اجرا شود میتوانید از طریق آدرس &lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1:4000&lt;/code&gt; وب‌سایت تولید شده را مشاهده کنید.&lt;/p&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;نصب جکیل روی ویندوز&lt;/h4&gt;
+
+&lt;p&gt;روبی به صورت پیش فرض روی ویندوز نصب نیست و باید آن را نصب کنید. از طریق &lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;RubyInstaller&lt;/a&gt; میتوانید به راحتی روبی و آخرین نسخه DevKit را روی ویندوز نصب کنید.&lt;/p&gt;
+
+&lt;p&gt;بعد از دانلود شدن، پکیج DevKit را اکسترکت کنید و از طریق Command Prompt وارد فولدر آن شوید. سپس دستورات زیر را اجرا کنید:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ruby dk.rb init
+ruby dk.rb install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;در آخر با استفاده از دستور زیر جم جکیل را نصب کنید.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;در صورتی که با موفقیت اجرا شود میتوانید از طریق آدرس &lt;code class=&quot;highlighter-rouge&quot;&gt;http://127.0.0.1:4000&lt;/code&gt; وب‌سایت تولید شده را مشاهده کنید.&lt;/p&gt;
+
+&lt;h4 id=&quot;github-pages&quot;&gt;انتقال روی Github Pages&lt;/h4&gt;
+
+&lt;p&gt;کافیست وارد گیت‌هاب شوید و یک &lt;a href=&quot;https://github.com/new&quot;&gt;ریپازیتوری جدید&lt;/a&gt; با نام &lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt; بسازید. البته به جای username نام کاربری خودتان را بنویسید.&lt;/p&gt;
+
+&lt;p&gt;به عنوان مثال نام کاربری من در گیت‌هاب &lt;code class=&quot;highlighter-rouge&quot;&gt;rezaaa&lt;/code&gt; هست. بنابراین یک &lt;a href=&quot;https://github.com/new&quot;&gt;ریپازیتوری جدید&lt;/a&gt; با نام &lt;code class=&quot;highlighter-rouge&quot;&gt;rezaaa.github.io&lt;/code&gt; میسازم (نام کاربری خودتون رو جایگزین کنید) و با استفاده از دستور زیر آن را Clone میکنم:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/rezaaa/rezaaa.github.io
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;سپس با استفاده از دستورات زیر وارد فولدر &lt;code class=&quot;highlighter-rouge&quot;&gt;rezaaa.github.io&lt;/code&gt; میشوم و یک فایل به اسم &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; که داخل آن متن &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello World&lt;/code&gt; نوشته شده میسازم.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;username.github.io
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World&quot;&lt;/span&gt; &amp;gt; index.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;حالا با استفاده از دستورات رایج گیت (اگر بلد نیستید در موردش سرچ کنید) فایل را کامیت و پوش میکنم.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add --all
+git commit -m &lt;span class=&quot;s2&quot;&gt;&quot;Initial commit&quot;&lt;/span&gt;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;بعد از اتمام انتقال فایل با استفاده از آدرس &lt;code class=&quot;highlighter-rouge&quot;&gt;http://username.github.io&lt;/code&gt; فایل ساخته شده را مشاهده کنید.&lt;/p&gt;
+
+&lt;p&gt;برای انتقال فایل‌های جکیل کافیست آنها را داخل فولدر ساخته شده انتقال دهید و کامیت و پوش کنید.&lt;/p&gt;
+
+&lt;p&gt;در صورتی که در روند نصب جکیل روی هر کدام از سیستم عامل‌ها به مشکل برخورد کردید از لینک &lt;a href=&quot;http://jekyllrb.com/docs/installation/&quot;&gt;Installation&lt;/a&gt; استفاده و یا از &lt;strong&gt;بخش نظرات&lt;/strong&gt; در پایان همین پست سوالاتتان را مطرح کنید.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 16 Apr 2016 00:00:00 +0430</pubDate>
+        <link>http://rezamahmoudi.ir/using-jekyll-and-github-pages.html</link>
+        <guid isPermaLink="true">http://rezamahmoudi.ir/using-jekyll-and-github-pages.html</guid>
+        
+        
+        <category>tutorial</category>
+        
+      </item>
     
       <item>
         <title>ایجاد فوتر چسبان با استفاده از Display:Table</title>

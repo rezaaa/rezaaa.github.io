@@ -95,7 +95,7 @@
 
 <p>این تابع امكان استفاده از محاسبات در خاصیت ها CSS رو ممكن میكنه! به مثال زیر توجه كنید:</p>
 
-<div class="highlighter-rouge">
+<div class="language-css highlighter-rouge">
 <pre class="highlight"><code><span class="nf">#test</span><span class="p">{</span>
     <span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.4</span><span class="p">);</span>
     <span class="nl">width</span><span class="p">:</span><span class="m">400px</span><span class="p">;</span>
@@ -111,7 +111,7 @@
 </code></pre>
 </div>
 
-<div class="highlighter-rouge">
+<div class="language-html highlighter-rouge">
 <pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"test"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -120,7 +120,7 @@
 
 <p>به نمونه های زیر هم دقت كنید:</p>
 
-<div class="highlighter-rouge">
+<div class="language-css highlighter-rouge">
 <pre class="highlight"><code><span class="c">/* basic calc */</span>
 <span class="nc">.simpleBlock</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">100%</span> <span class="n">-</span> <span class="m">100px</span><span class="p">);</span>
@@ -139,14 +139,14 @@
 
 <p>مثلا یكی از كاربردهای كه این تابع برای من داشت وسط قرار دادن فلش های كنترلی یك اسلایدشو بود كه من با استفاده از Calc در خاصیت <code class="highlighter-rouge">Top</code> اون رو <code class="highlighter-rouge">50%</code> قرار دادم و نصف ارتفاع تصویر فلش رو ازش كم كردم. به این صورت:</p>
 
-<div class="highlighter-rouge">
+<div class="language-css highlighter-rouge">
 <pre class="highlight"><code><span class="nt">top</span><span class="nd">:calc</span><span class="o">(</span><span class="nt">50</span><span class="o">%</span> <span class="nt">-</span> <span class="nt">20px</span><span class="o">);</span>
 </code></pre>
 </div>
 
 <p>در واقع ارتفاع تصویر من <code class="highlighter-rouge">40px</code> هست و چون من میخوام تصویرم به صورت عمودی وسط صفحه قرار بگیره اندازه ارتفاع  <code class="highlighter-rouge">(height)</code> رو نصف میكنم تا <code class="highlighter-rouge">20px</code> از بالا و <code class="highlighter-rouge">20px</code> از پایین كم كنه. اگر در حالت عادی فقط <code class="highlighter-rouge">50%</code> رو بهش بدید دقیقا وسط قرار نمیگیره و <code class="highlighter-rouge">40px</code> پایین تر میاد كه بعد باید <code class="highlighter-rouge">20px</code> از بالا كم كنید:</p>
 
-<div class="highlighter-rouge">
+<div class="language-css highlighter-rouge">
 <pre class="highlight"><code><span class="nt">margin-top</span><span class="nd">:-20px</span><span class="o">;</span>
 </code></pre>
 </div>
